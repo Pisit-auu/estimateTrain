@@ -84,6 +84,33 @@ select {
   color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px;
   padding: 10px 12px; min-width: 0;
 }
+.combo { position: relative; min-width: 0; }
+.combo > select { display: none; }
+.combo-in { position: relative; display: flex; align-items: center; }
+.combo-in .dot { position: absolute; left: 12px; width: 12px; height: 12px; border-radius: 50%; background: var(--c, var(--line)); pointer-events: none; }
+.combo input {
+  width: 100%; font: inherit; font-family: var(--f-display); font-weight: 600; font-size: 1.15rem;
+  color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px;
+  padding: 10px 40px 10px 32px; min-width: 0; text-overflow: ellipsis;
+}
+.combo input::placeholder { color: var(--muted); font-weight: 400; }
+.combo input:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.combo-btn { position: absolute; right: 4px; width: 34px; height: 34px; border: 0; background: none; color: var(--muted); font-size: 1.1rem; border-radius: 8px; cursor: pointer; }
+.combo-list {
+  position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 4px); margin: 0; padding: 4px;
+  list-style: none; max-height: min(55vh, 420px); overflow: auto; overscroll-behavior: contain;
+  background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; box-shadow: 0 10px 30px rgb(0 0 0 / .18);
+}
+.combo-list .grp { font-size: .75rem; color: var(--muted); padding: 8px 10px 2px; position: sticky; top: -4px; background: var(--surface); }
+.combo-list .opt { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; cursor: pointer; min-height: 40px; }
+.combo-list .opt .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.combo-list .opt .code { flex: none; font-family: var(--f-mono); font-size: .78rem; color: var(--muted); min-width: 3.2em; }
+.combo-list .opt .nm { min-width: 0; }
+.combo-list .opt .nm b { font-weight: 600; }
+.combo-list .opt .nm small { display: block; color: var(--muted); font-size: .78rem; line-height: 1.3; }
+.combo-list .opt[aria-selected="true"] { background: var(--blue-soft); }
+.combo-list .opt.cur .nm b::after { content: " ✓"; color: var(--now); }
+.combo-list .empty { padding: 12px 10px; color: var(--muted); }
 select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 .days { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
@@ -295,6 +322,7 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
   .brand h1 { font-size: 1.15rem; }
   .brand .tag { display: none; }
   select { font-size: 1.05rem; padding: 12px; }
+  .combo input { font-size: 1.05rem; padding-block: 12px; }
   .days button, .tapmode button { min-height: 36px; padding: 4px 14px; }
   .boards { gap: 12px; grid-template-columns: 1fr; }
   .board { padding: 14px; gap: 10px; }
@@ -323,7 +351,7 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
     <div class="picker">
       <div class="roundel" id="roundel">BL22</div>
       <div style="min-width:0">
-        <label for="station">เลือกสถานีที่คุณอยู่</label>
+        <label for="station-q">เลือกสถานีที่คุณอยู่</label>
         <select id="station"></select>
       </div>
     </div>
@@ -356,7 +384,7 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
     <div class="trip-row">
       <div class="tfield"><span class="lbl">จาก</span><div class="tval" id="tripFrom"></div></div>
       <button type="button" id="tripSwap" aria-label="สลับต้นทางกับปลายทาง" title="สลับต้นทางกับปลายทาง">⇄</button>
-      <div class="tfield grow"><label for="dest">ไปสถานี</label><select id="dest"></select></div>
+      <div class="tfield grow"><label for="dest-q">ไปสถานี</label><select id="dest"></select></div>
     </div>
     <div id="tripOut" aria-live="polite"></div>
   </section>
@@ -775,6 +803,99 @@ sel.innerHTML = `<optgroup label="สายสีน้ำเงิน">${codes.
 sel.value = station;
 sel.addEventListener('change', () => { station = sel.value; store.set('bl-station', station); rebuild(); focusStation(true); });
 
+// ---------- type-to-search station picker; the hidden <select> still holds the value ----------
+const GROUP_COL = ['var(--blue)', 'var(--purple)', ...Object.keys(XL).map(l => `var(--${l})`)];
+const norm = t => String(t).toLowerCase().normalize('NFC').replace(/[\s.\-·()'’]/g, '');
+const combos = [];
+function makeCombo(selEl, placeholder) {
+  const id = selEl.id;
+  const wrap = document.createElement('div'); wrap.className = 'combo';
+  selEl.replaceWith(wrap); wrap.appendChild(selEl);
+  wrap.insertAdjacentHTML('beforeend', `<div class="combo-in"><span class="dot"></span>
+    <input id="${id}-q" type="text" role="combobox" aria-expanded="false" aria-controls="${id}-list" aria-autocomplete="list"
+      autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" placeholder="${placeholder}">
+    <button type="button" class="combo-btn" tabindex="-1" aria-label="แสดงรายชื่อสถานี">▾</button></div>
+    <ul class="combo-list" id="${id}-list" role="listbox" hidden></ul>`);
+  const inp = wrap.querySelector('input'), list = wrap.querySelector('ul'), btn = wrap.querySelector('.combo-btn'), dot = wrap.querySelector('.combo-in .dot');
+  // one entry per real option: code, Thai and English name, line, and a search key that ignores spaces and case
+  const items = [];
+  [...selEl.querySelectorAll('optgroup')].forEach((g, gi) => [...g.children].forEach(o => {
+    const parts = o.textContent.split(' · ');
+    const hasCode = parts.length > 2; // "code · ไทย · English"; SRT stations have no code
+    const code = hasCode ? parts[0] : '';
+    const th = hasCode ? parts[1] : parts[0], en = parts.slice(hasCode ? 2 : 1).join(' · ');
+    items.push({ v: o.value, code, th, en, grp: g.label, col: GROUP_COL[gi] || 'var(--line)',
+      key: norm(o.textContent + ' ' + g.label + ' ' + o.value), thk: norm(th), enk: norm(en), ck: norm(code) });
+  }));
+  let shown = [], active = -1, open = false;
+  const label = it => it ? `${it.code ? it.code + ' · ' : ''}${it.th}` : '';
+  const cur = () => items.find(it => it.v === selEl.value);
+  function refresh() {
+    const it = cur();
+    if (document.activeElement !== inp) inp.value = label(it);
+    dot.style.setProperty('--c', it ? it.col : 'var(--line)');
+    btn.textContent = selEl.value && selEl.options[0]?.value === '' ? '×' : '▾';
+    btn.setAttribute('aria-label', btn.textContent === '×' ? 'ล้างสถานีปลายทาง' : 'แสดงรายชื่อสถานี');
+  }
+  function render(q) {
+    const nq = norm(q), toks = q.toLowerCase().split(/\s+/).map(norm).filter(Boolean);
+    shown = !nq ? items.slice() : items.filter(it => toks.every(t => it.key.includes(t)))
+      .map(it => ({ it, r: it.ck === nq ? 0 : it.thk.startsWith(nq) || it.enk.startsWith(nq) ? 1 : it.ck.startsWith(nq) ? 2 : 3 }))
+      .sort((a, b) => a.r - b.r).map(x => x.it);
+    active = shown.length ? 0 : -1;
+    let html = '', g = null;
+    shown.forEach((it, i) => {
+      if (!nq && it.grp !== g) { g = it.grp; html += `<li class="grp" role="presentation">${g}</li>`; }
+      html += `<li class="opt${it.v === selEl.value ? ' cur' : ''}" role="option" id="${id}-o${i}" data-i="${i}" aria-selected="${i === active}" style="--c:${it.col}">
+        <span class="dot"></span><span class="code">${it.code}</span><span class="nm"><b>${it.th}</b><small>${it.en}${nq ? ' · ' + it.grp : ''}</small></span></li>`;
+    });
+    list.innerHTML = html || `<li class="empty">ไม่พบสถานี “${q.replace(/[<>&]/g, '')}”</li>`;
+    if (!nq) { const ci = shown.findIndex(it => it.v === selEl.value); if (ci >= 0) setActive(ci, true); }
+    else inp.setAttribute('aria-activedescendant', active >= 0 ? `${id}-o0` : '');
+  }
+  function setActive(i, center) {
+    const prev = list.querySelector('[aria-selected="true"]'); if (prev) prev.setAttribute('aria-selected', 'false');
+    active = i; const el = list.querySelector(`[data-i="${i}"]`);
+    if (!el) return;
+    el.setAttribute('aria-selected', 'true'); inp.setAttribute('aria-activedescendant', el.id);
+    if (center) list.scrollTop = el.offsetTop - list.clientHeight / 2 + el.offsetHeight / 2;
+    else el.scrollIntoView({ block: 'nearest' });
+  }
+  function show() { if (open) return; open = true; list.hidden = false; inp.setAttribute('aria-expanded', 'true'); render(''); }
+  function hide() { open = false; list.hidden = true; inp.setAttribute('aria-expanded', 'false'); inp.removeAttribute('aria-activedescendant'); }
+  function choose(v) {
+    hide();
+    if (v !== selEl.value) { selEl.value = v; selEl.dispatchEvent(new Event('change')); }
+    inp.blur(); refresh();
+  }
+  inp.addEventListener('focus', () => {
+    inp.value = ''; show();
+    // on phones the keyboard covers the lower half, so lift the field to the top to leave room for the list
+    if (window.matchMedia('(max-width: 700px)').matches) setTimeout(() => wrap.scrollIntoView({ block: 'start', behavior: 'smooth' }), 250);
+  });
+  inp.addEventListener('input', () => { if (!open) show(); render(inp.value); });
+  inp.addEventListener('blur', () => setTimeout(() => { if (document.activeElement !== inp) { hide(); refresh(); } }, 150));
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault(); if (!open) show();
+      if (shown.length) setActive((active + (e.key === 'ArrowDown' ? 1 : -1) + shown.length) % shown.length);
+    } else if (e.key === 'Enter') {
+      e.preventDefault(); if (open && shown[active]) choose(shown[active].v);
+    } else if (e.key === 'Escape') { hide(); inp.blur(); refresh(); }
+  });
+  // pointerdown so the choice lands before the input loses focus
+  list.addEventListener('pointerdown', e => e.preventDefault());
+  list.addEventListener('click', e => { const li = e.target.closest('.opt'); if (li) choose(shown[+li.dataset.i].v); });
+  btn.addEventListener('pointerdown', e => e.preventDefault());
+  btn.addEventListener('click', () => {
+    if (btn.textContent === '×') { choose(''); return; }
+    if (open) { hide(); inp.blur(); refresh(); } else inp.focus();
+  });
+  const c = { refresh }; combos.push(c); refresh(); return c;
+}
+const refreshCombos = () => combos.forEach(c => c.refresh());
+makeCombo(sel, 'พิมพ์ชื่อสถานี เช่น สยาม, Asok, BL22');
+
 document.querySelectorAll('.days button').forEach(b => b.addEventListener('click', () => {
   dayMode = b.dataset.day; store.set('bl-day', dayMode); rebuild();
 }));
@@ -786,6 +907,7 @@ function currentDay() {
 }
 
 function rebuild() {
+  refreshCombos();
   const rd = document.getElementById('roundel');
   rd.textContent = codeLabel(station); rd.classList.toggle('pp', isPP(station));
   rd.style.cssText = XS[station] ? `border-color:var(${XL[XS[station].line].color});color:var(${XL[XS[station].line].color})` : '';
@@ -1176,8 +1298,9 @@ let tapMode = 'from';
 const destSel = document.getElementById('dest');
 destSel.innerHTML = `<option value="">— เลือกสถานีปลายทาง —</option>` + sel.innerHTML;
 destSel.value = dest;
-function setDest(c) { dest = c; destSel.value = c; store.set('bl-dest', c); lastRouteSig = null; tick(); }
+function setDest(c) { dest = c; destSel.value = c; store.set('bl-dest', c); lastRouteSig = null; refreshCombos(); tick(); }
 destSel.addEventListener('change', () => setDest(destSel.value));
+makeCombo(destSel, 'พิมพ์ชื่อสถานีปลายทาง');
 document.getElementById('tripSwap').addEventListener('click', () => {
   if (!dest) return;
   const a = station; station = dest; sel.value = station; store.set('bl-station', station);
