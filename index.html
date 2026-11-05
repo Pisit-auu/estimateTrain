@@ -3,6 +3,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>รถมาหรือยัง กรุงเทพฯ</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='26' fill='white' stroke='%231a4fa3' stroke-width='9'/%3E%3Crect x='19' y='27' width='26' height='11' rx='4' fill='%231a4fa3'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#1a4fa3">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,7 +93,15 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
   border-radius: 999px; padding: 4px 12px; cursor: pointer;
 }
 .days button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--surface); }
-.sim { display: flex; gap: 8px 10px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; }
+.simbox { border-top: 1px solid var(--line); padding-top: 10px; }
+.simbox summary { cursor: pointer; font-size: .85rem; color: var(--muted); display: flex; align-items: center; gap: 8px; min-height: 32px; list-style-position: inside; }
+.simbox .simstate { font-family: var(--f-mono); font-size: .8rem; padding: 1px 8px; border-radius: 999px; background: var(--line); color: var(--ink); }
+.simbox .simstate.on { background: var(--soon); color: var(--on-solid); }
+.simbox[open] summary { margin-bottom: 8px; }
+.mapctl { display: flex; gap: 6px; align-items: center; }
+.mapctl button { font: inherit; font-size: .85rem; min-width: 36px; height: 32px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 0 12px; cursor: pointer; }
+.mapctl button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.sim { display: flex; gap: 8px 10px; flex-wrap: wrap; align-items: center; }
 .sim > span { font-size: .8rem; color: var(--muted); }
 .sim select {
   font: inherit; font-family: var(--f-mono); font-size: .95rem; color: var(--ink); background: var(--bg);
@@ -273,6 +283,31 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
   .count .big { font-size: 2.4rem; }
   .clock { margin-left: 0; width: 100%; }
 }
+/* Phones: what matters first is "is my train coming", so the countdowns come straight after the station picker */
+@media (max-width: 700px) {
+  body { padding-block: 12px 32px; }
+  .wrap { gap: 14px; }
+  .wrap > .boards { order: 1; }
+  .wrap > .trip { order: 2; }
+  .wrap > .mapcard { order: 3; }
+  .wrap > .note { order: 4; }
+  header.sign { padding: 14px; gap: 12px; }
+  .brand h1 { font-size: 1.15rem; }
+  .brand .tag { display: none; }
+  select { font-size: 1.05rem; padding: 12px; }
+  .days button, .tapmode button { min-height: 36px; padding: 4px 14px; }
+  .boards { gap: 12px; grid-template-columns: 1fr; }
+  .board { padding: 14px; gap: 10px; }
+  .count .big { font-size: 2.3rem; }
+  .chip { font-size: .9rem; padding: 4px 9px; }
+  .trip { padding: 14px; }
+  .trip-sum .big { font-size: 2.2rem; }
+  .mapcard .cap { gap: 8px; }
+  .caphint { display: none; }
+  /* the map becomes a window you pan around in; it starts centred on the selected station */
+  .mapscroll { height: min(70vh, 560px); overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--line); }
+  .legend { font-size: .75rem; gap: 4px 10px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .track .train, .track .done { transition: none; }
   .pill.now::before { animation: none; }
@@ -300,8 +335,9 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
       <button type="button" id="d-sun" data-day="sun">อาทิตย์ / วันหยุด</button>
       <div class="clock" id="clock"></div>
     </div>
+    <details class="simbox" id="simBox" open>
+    <summary>จำลองเวลา <span class="simstate" id="simState">ใช้เวลาจริง</span></summary>
     <div class="sim" role="group" aria-label="จำลองเวลา">
-      <span>จำลองเวลา:</span>
       <span class="hm"><select id="simH" aria-label="ชั่วโมง (24 ชั่วโมง)"></select><b>:</b><select id="simM" aria-label="นาที"></select></span>
       <input type="range" id="simRange" min="300" max="1530" step="1" aria-label="เลื่อนเวลาจำลอง">
       <select id="simSpeed" aria-label="ความเร็วเวลาจำลอง">
@@ -312,6 +348,7 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
       </select>
       <button type="button" id="simReal" aria-pressed="true">ใช้เวลาจริง</button>
     </div>
+    </details>
   </header>
 
   <section class="trip" aria-label="วางแผนการเดินทาง">
@@ -325,7 +362,8 @@ select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); out
   </section>
 
   <section class="mapcard" aria-label="แผนที่สายสีน้ำเงินและสายสีม่วง">
-    <div class="cap"><div class="tapmode" role="group" aria-label="แตะแผนที่เพื่อเลือก"><span>แตะแผนที่เพื่อเลือก</span><button type="button" data-mode="from" aria-pressed="true">ต้นทาง</button><button type="button" data-mode="to" aria-pressed="false">ปลายทาง</button></div><span>รางคู่ แต่ละรางคือรถคนละทิศ · ป้ายคือรถขบวนถัดไปที่กำลังวิ่งเข้าสถานี (ประมาณการ)</span></div>
+    <div class="cap"><div class="tapmode" role="group" aria-label="แตะแผนที่เพื่อเลือก"><span>แตะแผนที่เพื่อเลือก</span><button type="button" data-mode="from" aria-pressed="true">ต้นทาง</button><button type="button" data-mode="to" aria-pressed="false">ปลายทาง</button></div><div class="mapctl" role="group" aria-label="ซูมแผนที่"><button type="button" id="zoomOut" aria-label="ซูมออก">−</button><button type="button" id="zoomIn" aria-label="ซูมเข้า">+</button><button type="button" id="mapFocus">ไปที่สถานีที่เลือก</button></div>
+    <span class="caphint">รางคู่ แต่ละรางคือรถคนละทิศ · ป้ายคือรถขบวนถัดไปที่กำลังวิ่งเข้าสถานี (ประมาณการ)</span></div>
     <div class="legend" aria-label="สีของแต่ละสาย">
       <span style="--c:var(--blue)"><i></i>MRT สายสีน้ำเงิน</span><span style="--c:var(--purple)"><i></i>MRT สายสีม่วง</span>
       <span style="--c:var(--sk)"><i></i>BTS สุขุมวิท</span><span style="--c:var(--sl)"><i></i>BTS สีลม</span><span style="--c:var(--gd)"><i></i>BTS สีทอง</span>
@@ -735,7 +773,7 @@ sel.innerHTML = `<optgroup label="สายสีน้ำเงิน">${codes.
   Object.entries(XL).map(([lid, L]) => `<optgroup label="${L.th}">${L.nodes.filter(c => !XS[c].hidden && XS[c].line === lid).map(c =>
     `<option value="${c}">${XS[c].label === 'SRT' ? '' : XS[c].label + ' · '}${XS[c].th} · ${XS[c].en}</option>`).join('')}</optgroup>`).join('');
 sel.value = station;
-sel.addEventListener('change', () => { station = sel.value; store.set('bl-station', station); rebuild(); });
+sel.addEventListener('change', () => { station = sel.value; store.set('bl-station', station); rebuild(); focusStation(true); });
 
 document.querySelectorAll('.days button').forEach(b => b.addEventListener('click', () => {
   dayMode = b.dataset.day; store.set('bl-day', dayMode); rebuild();
@@ -974,6 +1012,8 @@ function tick() {
   const hms = `${String(now.h).padStart(2, '0')}:${String(now.m).padStart(2, '0')}:${String(now.s).padStart(2, '0')}`;
   clk.textContent = now.simulated ? `จำลอง ${hms}${sim.speed === 0 ? ' (หยุด)' : sim.speed > 1 ? ` (×${sim.speed})` : ''}` : `วัน${TH_DAYS[now.wd]} · ${hms}`;
   clk.classList.toggle('simulated', !!now.simulated);
+  const ss = document.getElementById('simState');
+  if (ss) { ss.textContent = now.simulated ? clk.textContent : 'ใช้เวลาจริง'; ss.classList.toggle('on', !!now.simulated); }
   syncSimInputs(now);
   renderTrip(now);
   if (dayMode === 'auto') { const d = currentDay(); if (lastAutoDay && d !== lastAutoDay) { lastAutoDay = d; return rebuild(); } lastAutoDay = d; }
@@ -1141,7 +1181,7 @@ destSel.addEventListener('change', () => setDest(destSel.value));
 document.getElementById('tripSwap').addEventListener('click', () => {
   if (!dest) return;
   const a = station; station = dest; sel.value = station; store.set('bl-station', station);
-  setDest(a); rebuild();
+  setDest(a); rebuild(); focusStation(true);
 });
 document.querySelectorAll('.tapmode button').forEach(b => b.addEventListener('click', () => {
   tapMode = b.dataset.mode;
@@ -1244,7 +1284,35 @@ simSpeed.addEventListener('change', () => {
 });
 simReal.addEventListener('click', () => { sim = null; simSpeed.value = '1'; simReal.setAttribute('aria-pressed', 'true'); tick(); });
 
+// ---------- phone-friendly map: zoom levels and centring on the selected station ----------
+const mapSvg = document.getElementById('map'), mapBox = document.querySelector('.mapscroll');
+const ZOOMS = [620, 820, 1150, 1450, 1800];
+let zoomI = null;
+function setZoom(i) {
+  const c = mapCenter();
+  zoomI = Math.max(0, Math.min(ZOOMS.length - 1, i));
+  mapSvg.style.width = ZOOMS[zoomI] + 'px'; mapSvg.style.minWidth = '0';
+  // keep the same spot in the middle after zooming
+  requestAnimationFrame(() => { mapBox.scrollLeft = c.x * mapBox.scrollWidth - mapBox.clientWidth / 2; mapBox.scrollTop = c.y * mapBox.scrollHeight - mapBox.clientHeight / 2; });
+}
+function mapCenter() {
+  return { x: (mapBox.scrollLeft + mapBox.clientWidth / 2) / (mapBox.scrollWidth || 1), y: (mapBox.scrollTop + mapBox.clientHeight / 2) / (mapBox.scrollHeight || 1) };
+}
+function focusStation(smooth) {
+  const g = mapSvg.querySelector(`.m-stn[data-code="${station}"] .dot`); if (!g) return;
+  if (mapBox.scrollWidth <= mapBox.clientWidth + 2 && mapBox.scrollHeight <= mapBox.clientHeight + 2) return;
+  const r = g.getBoundingClientRect(), b = mapBox.getBoundingClientRect();
+  mapBox.scrollTo({ left: mapBox.scrollLeft + r.left + r.width / 2 - b.left - b.width / 2, top: mapBox.scrollTop + r.top + r.height / 2 - b.top - b.height / 2, behavior: smooth ? 'smooth' : 'auto' });
+}
+const curZoom = () => zoomI ?? ZOOMS.reduce((bi, w, i) => Math.abs(w - mapSvg.getBoundingClientRect().width) < Math.abs(ZOOMS[bi] - mapSvg.getBoundingClientRect().width) ? i : bi, 0);
+document.getElementById('zoomIn').addEventListener('click', () => setZoom(curZoom() + 1));
+document.getElementById('zoomOut').addEventListener('click', () => setZoom(curZoom() - 1));
+document.getElementById('mapFocus').addEventListener('click', () => focusStation(true));
+const simBox = document.getElementById('simBox');
+if (window.matchMedia('(max-width: 700px)').matches) simBox.open = false;
+
 drawMap();
 rebuild();
+requestAnimationFrame(() => focusStation(false));
 setInterval(tick, 1000);
 </script>
