@@ -1,0 +1,7 @@
+# reference images used while building (timetable posters, network map) — not needed by the site
+*.jpg
+*.jpeg
+*.png
+*.webp
+.playwright-mcp/
+.vercel

@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="th">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>รถมาหรือยัง กรุงเทพฯ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a station sign up top, one platform board per direction below, like the screens on an MRT platform */
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --ink: #0d1b33;
+  --muted: #5a6780;
+  --line: #d9e1ee;
+  --blue: #1a4fa3;
+  --blue-soft: #e3ecfa;
+  --now: #0f8a5f;
+  --now-soft: #dcf3ea;
+  --soon: #b86a00;
+  --soon-soft: #fbefd9;
+  --last: #c0362c;
+  --last-soft: #fbe3e0;
+  --purple: #6b3fa0;
+  --purple-soft: #efe6f8;
+  --river: #d4e9f3;
+  --on-solid: #ffffff;
+  --route: #ffe08a;
+  --sk: #4f9a1f; --sl: #0b7a6a; --gd: #b8901a; --rd: #b0202c; --rl: #dd5560; --ar: #8a1c47;
+  --lamp: #fff6c2;
+  --f-display: "Bai Jamjuree", "IBM Plex Sans Thai", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans Thai", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1222; --surface: #111c31; --ink: #e8eef9; --muted: #95a3bd; --line: #24324d;
+    --blue: #6f9cf0; --blue-soft: #1a2a4a;
+    --now: #45c99a; --now-soft: #12352b; --soon: #f0b14d; --soon-soft: #3a2a10;
+    --last: #f07a6f; --last-soft: #3d1b18; --purple: #b48ae6; --purple-soft: #2a1d3d; --river: #15304a; --on-solid: #0a1222; --route: #5c4a16; --sk: #7fcb4a; --sl: #3fb8a4; --gd: #e0bd4e; --rd: #f0646c; --rl: #ff9098; --ar: #d4648c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1222; --surface: #111c31; --ink: #e8eef9; --muted: #95a3bd; --line: #24324d;
+  --blue: #6f9cf0; --blue-soft: #1a2a4a;
+  --now: #45c99a; --now-soft: #12352b; --soon: #f0b14d; --soon-soft: #3a2a10;
+  --last: #f07a6f; --last-soft: #3d1b18; --purple: #b48ae6; --purple-soft: #2a1d3d; --river: #15304a; --on-solid: #0a1222; --route: #5c4a16; --sk: #7fcb4a; --sl: #3fb8a4; --gd: #e0bd4e; --rd: #f0646c; --rl: #ff9098; --ar: #d4648c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.wrap { max-width: 1280px; margin: 0 auto; display: grid; gap: 20px; }
+
+header.sign {
+  display: grid; gap: 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px; border-top: 6px solid var(--blue);
+}
+.brand { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.brand h1 { font-family: var(--f-display); font-size: 1.35rem; margin: 0; text-wrap: balance; line-height: 1.2; }
+.brand .tag { font-size: .78rem; color: var(--muted); letter-spacing: .04em; }
+
+.picker { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
+.roundel {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 5px solid var(--blue); display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 700; color: var(--blue); font-size: 1.05rem;
+  background: var(--surface);
+}
+.picker label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: 4px; }
+select {
+  width: 100%; font: inherit; font-family: var(--f-display); font-weight: 600; font-size: 1.15rem;
+  color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px;
+  padding: 10px 12px; min-width: 0;
+}
+select:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.days { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.days span { font-size: .8rem; color: var(--muted); margin-right: 4px; }
+.days button {
+  font: inherit; font-size: .85rem; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 999px; padding: 4px 12px; cursor: pointer;
+}
+.days button[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--surface); }
+.sim { display: flex; gap: 8px 10px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; }
+.sim > span { font-size: .8rem; color: var(--muted); }
+.sim select {
+  font: inherit; font-family: var(--f-mono); font-size: .95rem; color: var(--ink); background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: 8px; padding: 4px 8px;
+}
+.sim select { width: auto; }
+.sim input[type="range"] { flex: 1 1 160px; min-width: 0; accent-color: var(--blue); }
+.sim button { font: inherit; font-size: .85rem; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.sim button[aria-pressed="true"] { background: var(--soon); border-color: var(--soon); color: var(--on-solid); }
+.sim .hm { display: inline-flex; align-items: center; gap: 3px; }
+.sim .hm b { font-family: var(--f-mono); color: var(--muted); }
+.sim input:focus-visible, .sim select:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.clock.simulated { color: var(--soon); font-weight: 600; }
+.clock { font-family: var(--f-mono); font-variant-numeric: tabular-nums; color: var(--muted); font-size: .85rem; margin-left: auto; }
+
+.boards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.board {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px;
+  display: grid; gap: 14px; min-width: 0;
+}
+.dir { display: grid; gap: 2px; }
+.dir .to { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; }
+.dir .via { font-size: .83rem; color: var(--muted); }
+
+.status { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pill {
+  font-family: var(--f-display); font-weight: 600; font-size: .95rem;
+  padding: 4px 12px; border-radius: 999px; background: var(--blue-soft); color: var(--blue);
+}
+.pill.now { background: var(--now-soft); color: var(--now); }
+.pill.soon { background: var(--soon-soft); color: var(--soon); }
+.pill.off { background: var(--line); color: var(--muted); }
+.pill.lastb { background: var(--last-soft); color: var(--last); }
+.pill.now::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: currentColor; margin-right: 7px; vertical-align: middle; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+
+.count { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.count .big { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 600; font-size: 2.8rem; line-height: 1; letter-spacing: -.02em; }
+.count .unit { color: var(--muted); font-size: .9rem; }
+
+.track { position: relative; height: 30px; }
+.track .rail { position: absolute; left: 0; right: 14px; top: 50%; height: 4px; transform: translateY(-50%); background: var(--blue-soft); border-radius: 2px; }
+.track .done { position: absolute; left: 0; top: 50%; height: 4px; transform: translateY(-50%); background: var(--blue); border-radius: 2px; transition: width 1s linear; }
+.track .stn { position: absolute; right: 0; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); border-radius: 50%; border: 4px solid var(--blue); background: var(--surface); }
+.track .train {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 40px; height: 14px; border-radius: 4px 9px 9px 4px; background: var(--blue);
+  box-shadow: 0 0 0 2px var(--surface);
+  transition: left 1s linear;
+}
+/* car joints */
+.track .train::before { content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(90deg, transparent 32%, var(--surface) 32% 36%, transparent 36% 64%, var(--surface) 64% 68%, transparent 68%); }
+/* window band and headlight */
+.track .train::after { content: ""; position: absolute; top: 4px; left: 4px; right: 8px; height: 3px; border-radius: 2px; background: var(--surface); opacity: .85;
+  box-shadow: 6px 0 0 -0.5px var(--lamp); }
+.track.off .train { display: none; }
+.track-cap { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); margin-top: -6px; }
+
+.next { display: grid; gap: 6px; }
+.next h3 { margin: 0; font-size: .75rem; letter-spacing: .06em; color: var(--muted); font-weight: 500; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: .95rem; padding: 3px 10px; border-radius: 8px; border: 1px solid var(--line); }
+.chip.last { border-color: var(--last); color: var(--last); }
+
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+.fact .k { font-size: .75rem; color: var(--muted); }
+.fact .v { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 600; }
+.purple { grid-column: 1 / -1; background: var(--purple-soft); color: var(--purple); border-radius: 8px; padding: 8px 10px; font-size: .85rem; }
+.purple.gone { opacity: .75; }
+.warn { background: var(--last-soft); color: var(--last); border-radius: 8px; padding: 8px 10px; font-size: .88rem; font-weight: 500; }
+
+.mapcard { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding-block: 12px; display: grid; gap: 6px; min-width: 0; }
+.mapcard .cap { padding-inline: 16px; display: flex; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; font-size: .8rem; color: var(--muted); }
+.mapscroll { overflow-x: auto; }
+.mapscroll svg { display: block; width: 100%; min-width: 1150px; height: auto; }
+.m-river { fill: none; stroke: var(--river); stroke-width: 26; stroke-linecap: round; }
+.m-river-t { font-family: var(--f-body); font-size: 11px; fill: var(--muted); }
+.m-line { fill: none; stroke: var(--blue); stroke-width: 15; stroke-linejoin: round; stroke-linecap: round; }
+.m-div { fill: none; stroke: var(--surface); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 7 4; opacity: .9; }
+.m-stn { cursor: pointer; outline: none; }
+.m-stn .hit { fill: transparent; }
+.m-stn .dot { fill: var(--surface); stroke: var(--blue); stroke-width: 3; }
+.m-stn .halo { fill: var(--blue-soft); opacity: 0; }
+.m-stn text { font-family: var(--f-body); font-size: 12.5px; fill: var(--ink); }
+.m-stn:hover .dot, .m-stn:focus-visible .dot { stroke-width: 5; }
+.m-stn:focus-visible .halo { opacity: 1; }
+.m-stn.sel .halo { opacity: 1; }
+.m-stn.sel .dot { fill: var(--blue); stroke: var(--surface); }
+.m-stn.sel text { font-weight: 600; fill: var(--blue); font-size: 14px; }
+.roundel.pp { border-color: var(--purple); color: var(--purple); }
+.m-line.pp { stroke: var(--purple); }
+.m-stn.pp .dot { stroke: var(--purple); }
+.m-stn.pp .halo { fill: var(--purple-soft); }
+.m-stn.pp.sel .dot { fill: var(--purple); }
+.m-stn.pp.sel text { fill: var(--purple); }
+.m-line.xl { stroke: var(--c); }
+.m-stn.xl .dot { stroke: var(--c); }
+.m-stn.xl.sel .dot { fill: var(--c); }
+.m-stn.xl.sel text { fill: var(--c); }
+.m-link { stroke: var(--ink); stroke-width: 7; stroke-linecap: round; }
+.m-link-in { stroke: var(--surface); stroke-width: 3; stroke-linecap: round; }
+.board.xl { border-top: 5px solid var(--lc); }
+.board.xl .to { color: var(--lc); }
+.board.xl .track .done, .board.xl .track .train { background: var(--lc); }
+.board.xl .track .stn { border-color: var(--lc); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding-inline: 16px; font-size: .8rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 18px; height: 6px; border-radius: 3px; background: var(--c); display: inline-block; }
+.m-xfer { fill: none; stroke: var(--purple); stroke-width: 3; }
+.board.pp { border-top: 5px solid var(--purple); }
+.board.pp p { margin: 0; color: var(--muted); max-width: 60ch; }
+.board.pp .to { color: var(--purple); }
+.board.pp .track .done, .board.pp .track .train { background: var(--purple); }
+.board.pp .track .rail { background: var(--purple-soft); }
+.board.pp .track .stn { border-color: var(--purple); }
+.linkbtn { justify-self: start; font: inherit; font-weight: 600; border: 1.5px solid var(--blue); color: var(--blue); background: var(--surface); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.m-train .body, .m-train .bub { transition: transform 1s linear; }
+.m-train { --c: var(--blue); }
+.m-train.pp { --c: var(--purple); }
+.m-train .car { fill: var(--surface); stroke: var(--c); stroke-width: 1.6; }
+.m-train .gap { stroke: var(--c); stroke-width: 1.2; }
+.m-train .win { fill: var(--c); }
+.m-train .lamp { fill: var(--lamp); stroke: var(--ink); stroke-width: .6; }
+.m-train .lead { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 2 2.5; }
+.m-train .bubr { fill: var(--blue); stroke: var(--surface); stroke-width: 2; }
+.m-train.pp .bubr { fill: var(--purple); }
+.m-train.xl .bubr { fill: var(--c); }
+.m-train.soon .bubr { fill: var(--soon); }
+.m-train.now .bubr { fill: var(--now); }
+.m-train .bub text { font-family: var(--f-body); font-size: 10.5px; font-weight: 500; fill: var(--on-solid); }
+.m-train .bub .t { font-family: var(--f-mono); font-size: 12.5px; font-weight: 600; }
+.m-route { fill: none; stroke: var(--route); stroke-width: 28; stroke-linecap: round; stroke-linejoin: round; }
+.m-stn.dest .halo { opacity: 1; fill: var(--route); }
+.m-stn.dest .dot { fill: var(--ink); stroke: var(--surface); }
+.m-stn.dest text { font-weight: 700; font-size: 14px; fill: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .m-train .body, .m-train .bub { transition: none; } }
+
+.tapmode { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.tapmode button { font: inherit; font-size: .8rem; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+.tapmode button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+
+.trip { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 14px; min-width: 0; }
+.trip h2 { margin: 0; font-family: var(--f-display); font-size: 1.05rem; }
+.trip-row { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; }
+.tfield { display: grid; gap: 4px; min-width: 0; }
+.tfield.grow { flex: 1 1 260px; }
+.tfield label, .tfield .lbl { font-size: .8rem; color: var(--muted); }
+.tval { font-family: var(--f-display); font-weight: 600; font-size: 1.05rem; padding: 10px 12px; border-radius: 10px; background: var(--blue-soft); color: var(--blue); }
+#tripSwap { font: inherit; font-size: 1.1rem; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+#tripSwap:disabled { opacity: .4; cursor: default; }
+#tripSwap:focus-visible, .tapmode button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.trip-hint { margin: 0; color: var(--muted); font-size: .9rem; }
+.trip-sum { display: flex; gap: 8px 18px; align-items: center; flex-wrap: wrap; }
+.trip-sum .big { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 600; font-size: 2.6rem; line-height: 1; }
+.trip-sum .big span { font-family: var(--f-body); font-size: .95rem; color: var(--muted); font-weight: 500; margin-left: 4px; }
+.trip-sum .eta { display: grid; gap: 2px; font-size: .95rem; }
+.trip-sum .eta b { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.trip-sum .eta span { color: var(--muted); font-size: .85rem; }
+.legs { list-style: none; margin: 0; padding: 0; display: grid; }
+.legs li { display: grid; grid-template-columns: 50px 20px 1fr; gap: 0 6px; min-height: 40px; }
+.legs .tm { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-weight: 600; line-height: 20px; }
+.legs .rail { position: relative; --c: var(--blue); }
+.legs .lg-pp .rail { --c: var(--purple); }
+.legs .lg-board .rail::before { content: ""; position: absolute; left: 8px; top: 10px; bottom: -10px; width: 4px; background: var(--c); }
+.legs .lg-walk .rail::before { content: ""; position: absolute; left: 9px; top: -10px; bottom: -10px; border-left: 2px dashed var(--muted); }
+.legs .lg-board .rail::after, .legs .lg-alight .rail::after { content: ""; position: absolute; left: 3px; top: 3px; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: var(--surface); border: 3px solid var(--c); }
+.legs .lg-alight.final .rail::after { background: var(--ink); border-color: var(--ink); }
+.legs .what { line-height: 20px; padding-bottom: 10px; min-width: 0; }
+.legs .what b { font-weight: 600; }
+.legs .what div { color: var(--muted); font-size: .85rem; line-height: 1.45; }
+.legs .lg-walk .what { color: var(--muted); font-size: .88rem; }
+
+.note { font-size: .82rem; color: var(--muted); max-width: 70ch; display: grid; gap: 6px; }
+.note p { margin: 0; }
+
+@media (max-width: 420px) {
+  .roundel { width: 54px; height: 54px; font-size: .9rem; border-width: 4px; }
+  .count .big { font-size: 2.4rem; }
+  .clock { margin-left: 0; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track .train, .track .done { transition: none; }
+  .pill.now::before { animation: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="sign">
+    <div class="brand">
+      <h1>รถมาหรือยัง · รถไฟฟ้ากรุงเทพฯ</h1>
+      <span class="tag">MRT · BTS · สายสีแดง · Airport Rail Link · ประมาณการจากตารางเดินรถ</span>
+    </div>
+    <div class="picker">
+      <div class="roundel" id="roundel">BL22</div>
+      <div style="min-width:0">
+        <label for="station">เลือกสถานีที่คุณอยู่</label>
+        <select id="station"></select>
+      </div>
+    </div>
+    <div class="days" role="group" aria-label="ประเภทวัน">
+      <span>วัน:</span>
+      <button type="button" id="d-auto" data-day="auto">อัตโนมัติ</button>
+      <button type="button" id="d-wd" data-day="wd">จันทร์–ศุกร์</button>
+      <button type="button" id="d-sat" data-day="sat">เสาร์</button>
+      <button type="button" id="d-sun" data-day="sun">อาทิตย์ / วันหยุด</button>
+      <div class="clock" id="clock"></div>
+    </div>
+    <div class="sim" role="group" aria-label="จำลองเวลา">
+      <span>จำลองเวลา:</span>
+      <span class="hm"><select id="simH" aria-label="ชั่วโมง (24 ชั่วโมง)"></select><b>:</b><select id="simM" aria-label="นาที"></select></span>
+      <input type="range" id="simRange" min="300" max="1530" step="1" aria-label="เลื่อนเวลาจำลอง">
+      <select id="simSpeed" aria-label="ความเร็วเวลาจำลอง">
+        <option value="1">ปกติ ×1</option>
+        <option value="10">เร็ว ×10</option>
+        <option value="60">เร็วมาก ×60</option>
+        <option value="0">หยุดเวลา</option>
+      </select>
+      <button type="button" id="simReal" aria-pressed="true">ใช้เวลาจริง</button>
+    </div>
+  </header>
+
+  <section class="trip" aria-label="วางแผนการเดินทาง">
+    <h2>จะไปลงสถานีไหน</h2>
+    <div class="trip-row">
+      <div class="tfield"><span class="lbl">จาก</span><div class="tval" id="tripFrom"></div></div>
+      <button type="button" id="tripSwap" aria-label="สลับต้นทางกับปลายทาง" title="สลับต้นทางกับปลายทาง">⇄</button>
+      <div class="tfield grow"><label for="dest">ไปสถานี</label><select id="dest"></select></div>
+    </div>
+    <div id="tripOut" aria-live="polite"></div>
+  </section>
+
+  <section class="mapcard" aria-label="แผนที่สายสีน้ำเงินและสายสีม่วง">
+    <div class="cap"><div class="tapmode" role="group" aria-label="แตะแผนที่เพื่อเลือก"><span>แตะแผนที่เพื่อเลือก</span><button type="button" data-mode="from" aria-pressed="true">ต้นทาง</button><button type="button" data-mode="to" aria-pressed="false">ปลายทาง</button></div><span>รางคู่ แต่ละรางคือรถคนละทิศ · ป้ายคือรถขบวนถัดไปที่กำลังวิ่งเข้าสถานี (ประมาณการ)</span></div>
+    <div class="legend" aria-label="สีของแต่ละสาย">
+      <span style="--c:var(--blue)"><i></i>MRT สายสีน้ำเงิน</span><span style="--c:var(--purple)"><i></i>MRT สายสีม่วง</span>
+      <span style="--c:var(--sk)"><i></i>BTS สุขุมวิท</span><span style="--c:var(--sl)"><i></i>BTS สีลม</span><span style="--c:var(--gd)"><i></i>BTS สีทอง</span>
+      <span style="--c:var(--rd)"><i></i>สายสีแดงเข้ม</span><span style="--c:var(--rl)"><i></i>สายสีแดงอ่อน</span><span style="--c:var(--ar)"><i></i>Airport Rail Link</span>
+    </div>
+    <div class="mapscroll"><svg id="map" viewBox="-90 -370 1530 1240" role="group" aria-label="แผนที่สถานีรถไฟฟ้าสายสีน้ำเงินและสายสีม่วง"></svg></div>
+  </section>
+
+  <section class="boards" id="boards" aria-live="polite"></section>
+
+  <div class="note">
+    <p>เวลาทั้งหมดเป็นการประมาณ คิดจากเวลาเที่ยวแรก เที่ยวสุดท้าย และความถี่ของรถในตารางเดินรถสายสีน้ำเงิน เวลาจริงอาจคลาดเคลื่อนได้ราว 2–3 นาที โดยเฉพาะช่วงกลางวันที่ห่างจากเที่ยวแรกและเที่ยวสุดท้าย</p>
+    <p>สายสีม่วงใช้ตารางฉบับ 11 ส.ค. 2560 (รถทุก 6 นาทีช่วงเร่งด่วนวันธรรมดา นอกนั้นทุก 9 นาที 33 วินาที) ถ้าตารางปัจจุบันเปลี่ยนไป เวลาที่แสดงจะคลาดเคลื่อนมากขึ้น</p>
+    <p>BTS ใช้เวลาเที่ยวแรก/เที่ยวสุดท้ายรายสถานีและความถี่จากเว็บไซต์ BTS · สายสีแดงใช้ตารางเวลาออกรถจริงฉบับวันธรรมดาจาก รฟฟท. (ใช้กับวันหยุดด้วย) · Airport Rail Link ยังไม่มีตารางทางการให้ดึง เวลาเป็นการประมาณ (เที่ยวแรก 05:30 เที่ยวสุดท้าย 00:00 วิ่งตลอดสาย ~27 นาที) · เวลาเดินเปลี่ยนสายระหว่างสถานีเป็นค่าประมาณ</p>
+    <p>วันหยุดนักขัตฤกษ์ให้กด "อาทิตย์ / วันหยุด" เอง และควรมาถึงสถานีก่อนเที่ยวสุดท้ายอย่างน้อย 5 นาที</p>
+  </div>
+</div>
+
+<script>
+// code | ไทย | English | weekday ไปหลักสอง | weekday ไปท่าพระ | weekday ต่อสายม่วง | weekend ไปหลักสอง | weekend ไปท่าพระ | weekend ต่อสายม่วง
+const RAW = `38|หลักสอง|Lak Song|-,-|05:30,23:08|22:33|-,-|05:57,23:08|22:30
+37|บางแค|Bang Khae|05:32,00:30|05:32,23:10|22:35|06:01,00:27|06:00,23:10|22:32
+36|ภาษีเจริญ|Phasi Charoen|05:36,00:28|05:34,23:12|22:37|05:59,00:25|06:01,23:12|22:34
+35|เพชรเกษม 48|Phetkasem 48|05:40,00:26|05:36,23:14|22:39|05:57,00:23|05:56,23:14|22:35
+34|บางหว้า|Bang Wa|05:38,00:24|05:38,23:16|22:41|05:55,00:21|05:58,23:16|22:38
+33|บางไผ่|Bang Phai|05:44,00:22|05:40,23:18|22:42|06:01,00:20|06:00,23:18|22:40
+32|อิสรภาพ|Itsaraphap|05:51,00:18|05:45,23:22|22:47|05:57,00:16|05:56,23:22|22:44
+31|สนามไชย|Sanam Chai|05:48,00:16|05:47,23:24|22:49|06:02,00:13|05:58,23:24|22:46
+30|สามยอด|Sam Yot|05:53,00:14|05:49,23:26|22:51|06:00,00:12|06:00,23:26|22:48
+29|วัดมังกร|Wat Mangkon|05:51,00:12|05:51,23:28|22:52|05:58,00:10|05:55,23:28|22:50
+28|หัวลำโพง|Hua Lamphong|06:00,00:10|05:53,23:30|22:54|05:56,00:08|05:57,23:30|22:52
+27|สามย่าน|Sam Yan|05:57,00:08|05:55,23:32|22:57|06:01,00:05|05:59,23:32|22:54
+26|สีลม|Si Lom|05:59,00:06|05:57,23:34|22:58|06:00,00:04|06:01,23:34|22:56
+25|ลุมพินี|Lumphini|05:57,00:04|05:59,23:35|23:00|05:58,00:02|05:55,23:35|22:57
+24|คลองเตย|Khlong Toei|05:55,00:03|05:54,23:37|23:02|05:56,00:00|05:57,23:37|22:59
+23|ศูนย์การประชุมแห่งชาติสิริกิติ์|Queen Sirikit Centre|05:54,00:01|05:55,23:39|23:04|05:55,23:58|05:59,23:39|23:01
+22|สุขุมวิท|Sukhumvit|05:58,23:58|05:58,23:42|23:06|05:59,23:56|06:02,23:42|23:04
+21|เพชรบุรี|Phetchaburi|05:56,23:56|05:53,23:44|23:08|05:57,23:54|06:04,23:44|23:06
+20|พระราม 9|Phra Ram 9|05:54,23:54|05:55,23:45|23:10|05:55,23:52|06:05,23:45|23:07
+19|ศูนย์วัฒนธรรมฯ|Thailand Cultural Centre|05:55,23:52|05:54,23:48|23:12|06:05,23:50|06:01,23:48|23:10
+18|ห้วยขวาง|Huai Khwang|05:59,23:50|05:56,23:50|23:15|06:03,23:47|05:55,23:50|23:12
+17|สุทธิสาร|Sutthisan|05:57,23:48|05:58,23:52|23:17|06:01,23:45|05:57,23:52|23:14
+16|รัชดาภิเษก|Ratchadaphisek|05:55,23:46|05:56,23:54|23:19|05:59,23:43|05:59,23:54|23:16
+15|ลาดพร้าว|Lat Phrao|05:53,23:44|05:58,23:56|23:21|05:57,23:42|05:55,23:56|23:18
+14|พหลโยธิน|Phahon Yothin|05:58,23:42|05:57,23:58|23:23|05:55,23:39|05:57,23:58|23:20
+13|สวนจตุจักร|Chatuchak Park|05:56,23:39|05:56,00:01|23:25|05:59,23:37|05:59,00:01|23:23
+12|กำแพงเพชร|Kamphaeng Phet|05:54,23:37|05:54,00:03|23:27|05:57,23:35|05:55,00:03|23:25
+11|บางซื่อ|Bang Sue|05:52,23:35|05:56,00:05|23:29|05:55,23:33|05:57,00:05|23:27
+10|เตาปูน|Tao Poon|05:50,23:33|05:55,00:07|23:32|05:53,23:30|05:59,00:07|23:30
+09|บางโพ|Bang Pho|05:55,23:31|05:57,00:09|23:31|05:58,23:29|06:00,00:09|23:29
+08|บางอ้อ|Bang O|05:52,23:28|05:53,00:11|23:28|05:56,23:26|05:55,00:11|23:26
+07|บางพลัด|Bang Phlat|05:50,23:27|05:51,00:13|23:27|06:02,23:24|05:57,00:13|23:24
+06|สิรินธร|Sirindhorn|05:48,23:25|05:50,00:15|23:25|06:00,23:22|05:59,00:15|23:22
+05|บางยี่ขัน|Bang Yi Khan|05:46,23:23|05:49,00:17|23:23|05:58,23:20|06:01,00:17|23:20
+04|บางขุนนนท์|Bang Khun Non|05:43,23:20|05:49,00:20|23:20|05:55,23:17|05:55,00:20|23:17
+03|ไฟฉาย|Fai Chai|05:41,23:18|05:44,00:22|23:18|06:00,23:16|05:57,00:22|23:16
+02|จรัญฯ 13|Charan 13|05:39,23:16|05:40,00:24|23:16|05:58,23:13|06:00,00:24|23:13`;
+
+const P = s => { if (!s || s === '-') return null; const [h, m] = s.split(':').map(Number); let v = h * 60 + m; if (v < 180) v += 1440; return v; };
+const pair = s => s.split(',').map(P);
+
+const ST = {};
+RAW.split('\n').forEach(r => {
+  const [code, th, en, wL, wT, wP, eL, eT, eP] = r.split('|');
+  ST[code] = { code, th, en, wd: { L: pair(wL), T: pair(wT), P: P(wP) }, we: { L: pair(eL), T: pair(eT), P: P(eP) } };
+});
+// Purple Line stations from the network map (PP16 Tao Poon is the same node as BL10)
+const PP = [
+  ['P01', 'คลองบางไผ่', 'Khlong Bang Phai', [60, -140]], ['P02', 'ตลาดบางใหญ่', 'Talad Bang Yai', [60, -90]], ['P03', 'สามแยกบางใหญ่', 'Sam Yaek Bang Yai', [60, -40]],
+  ['P04', 'บางพลู', 'Bang Phlu', [100, -40]], ['P05', 'บางรักใหญ่', 'Bang Rak Yai', [140, -40]], ['P06', 'บางรักน้อยท่าอิฐ', 'Bang Rak Noi Tha It', [180, -40]],
+  ['P07', 'ไทรม้า', 'Sai Ma', [220, -40]], ['P08', 'สะพานพระนั่งเกล้า', 'Phra Nang Klao Bridge', [260, -40]], ['P09', 'แยกนนทบุรี 1', 'Yaek Nonthaburi 1', [300, -40]],
+  ['P10', 'บางกระสอ', 'Bang Krasor', [340, -40]], ['P11', 'ศูนย์ราชการนนทบุรี', 'Nonthaburi Civic Center', [380, -40]],
+  ['P12', 'กระทรวงสาธารณสุข', 'Ministry of Public Health', [425, -10]], ['P13', 'แยกติวานนท์', 'Yaek Tiwanon', [460, 25]],
+  ['P14', 'วงศ์สว่าง', 'Wong Sawang', [495, 60]], ['P15', 'บางซ่อน', 'Bang Son', [530, 95]],
+];
+const PPS = Object.fromEntries(PP.map(([c, th, en, xy]) => [c, { th, en, xy }]));
+const isPP = c => c[0] === 'P';
+const codeLabel = c => isPP(c) ? 'PP' + c.slice(1) : (typeof XS !== 'undefined' && XS[c]) ? XS[c].label : 'BL' + c;
+const name = c => isPP(c) ? PPS[c].th : (typeof XS !== 'undefined' && XS[c]) ? XS[c].th : c === '01' ? 'ท่าพระ' : ST[c].th;
+
+// Order of travel for each direction (Tha Phra appears at its platforms)
+const ORDER_L = ['01c', ...Array.from({ length: 31 }, (_, i) => String(i + 2).padStart(2, '0')), '01a', '33', '34', '35', '36', '37', '38'];
+const ORDER_T = [...ORDER_L].reverse().map(c => c === '01a' ? '01b' : c === '01c' ? '01c' : c);
+function nextStop(order, code) {
+  const i = order.indexOf(code); const n = order[i + 1];
+  return n ? name(n.slice(0, 2)) : null;
+}
+
+// Purple Line connection applies to the direction heading towards Tao Poon
+function purpleDir(code) { const n = +code; return n === 10 ? 'both' : n >= 11 ? 'T' : 'L'; }
+
+function routesFor(code) {
+  if (code === '01') {
+    return [
+      { key: 'p1', mdir: 'L', to: 'ไปหลักสอง', via: 'ชานชาลา 1 · ผ่านบางไผ่ บางหว้า บางแค', wd: [P('05:42'), P('00:20')], we: [P('05:59'), P('00:18')], loop: true },
+      { key: 'p2', mdir: 'T', to: 'ไปท่าพระ (วนรอบ)', via: 'ชานชาลา 2 · ผ่านอิสรภาพ หัวลำโพง สุขุมวิท บางซื่อ', wd: [P('05:42'), P('23:19')], we: [P('06:02'), P('23:19')], loop: true, purple: { wd: P('22:44'), we: P('22:41') } },
+      { key: 'p34', to: 'ไปหลักสอง (วนรอบ)', via: 'ชานชาลา 3–4 · ผ่านจรัญฯ 13 บางโพ เตาปูน บางซื่อ', wd: [P('05:43'), P('23:14')], we: [P('05:56'), P('23:11')], loop: true, purple: { wd: P('23:14'), we: P('23:11') } },
+    ];
+  }
+  const s = ST[code], pd = purpleDir(code), n = +code;
+  const loop = n >= 2 && n <= 8;
+  const out = [];
+  if (s.wd.L[0] != null) out.push({ key: 'L', mdir: 'L', to: 'ไปหลักสอง', via: 'สถานีถัดไป: ' + nextStop(ORDER_L, code), wd: s.wd.L, we: s.we.L, loop,
+    purple: (pd === 'L' || pd === 'both') ? { wd: s.wd.P, we: s.we.P } : null });
+  out.push({ key: 'T', mdir: 'T', to: code === '38' ? 'ไปท่าพระ (ต้นทาง)' : 'ไปท่าพระ', via: 'สถานีถัดไป: ' + nextStop(ORDER_T, code), wd: s.wd.T, we: s.we.T, loop,
+    purple: (pd === 'T' || pd === 'both') ? { wd: s.wd.P, we: s.we.P } : null });
+  return out;
+}
+
+// Purple Line timetable (MRT Purple Line poster, updated 11 Aug 2017)
+// code | to Tao Poon weekday | to Tao Poon weekend | to Khlong Bang Phai weekday | to Khlong Bang Phai weekend
+const PRAW = `01|05:30,22:47|06:00,22:47|-,-|-,-
+02|05:32,22:49|06:02,22:49|06:30,23:57|06:51,23:57
+03|05:35,22:51|06:04,22:51|06:28,23:54|06:48,23:54
+04|05:37,22:54|06:07,22:54|06:25,23:51|06:45,23:51
+05|05:39,22:56|06:09,22:56|06:23,23:49|06:43,23:49
+06|05:42,22:58|06:11,22:58|06:21,23:47|06:41,23:47
+07|05:44,23:00|06:13,23:00|06:20,23:45|06:39,23:45
+08|05:46,23:02|06:15,23:02|06:17,23:43|06:37,23:43
+09|05:49,23:05|06:18,23:05|06:15,23:40|06:34,23:40
+10|05:51,23:07|06:20,23:07|06:13,23:38|06:32,23:38
+11|05:53,23:09|06:22,23:09|06:11,23:36|06:30,23:36
+12|05:57,23:12|06:25,23:12|06:08,23:33|06:27,23:33
+13|05:59,23:15|06:28,23:15|06:06,23:31|06:25,23:31
+14|06:02,23:17|06:30,23:17|06:04,23:28|06:22,23:28
+15|06:05,23:20|06:33,23:20|06:02,23:26|06:20,23:26
+16|-,-|-,-|06:00,23:24|06:18,23:24`;
+const PT = {};
+PRAW.split('\n').forEach(r => { const [n, tw, te, kw, ke] = r.split('|'); PT[n] = { T: { wd: pair(tw), we: pair(te) }, K: { wd: pair(kw), we: pair(ke) } }; });
+
+// Purple routes for a station; Tao Poon (BL10) is PP16
+function ppRoutes(code) {
+  const n = code === '10' ? 16 : +code.slice(1), d = PT[String(n).padStart(2, '0')];
+  const nm = k => k === 16 ? 'เตาปูน' : k === 0 ? null : PPS['P' + String(k).padStart(2, '0')].th;
+  const out = [];
+  if (d.T.wd[0] != null) out.push({ key: 'pT', line: 'pp', mdir: 'T', to: 'สายสีม่วง ไปเตาปูน', via: 'สถานีถัดไป: ' + nm(n + 1), wd: d.T.wd, we: d.T.we });
+  if (d.K.wd[0] != null) out.push({ key: 'pK', line: 'pp', mdir: 'L', to: 'สายสีม่วง ไปคลองบางไผ่', via: 'สถานีถัดไป: ' + nm(n - 1), wd: d.K.wd, we: d.K.we });
+  return out;
+}
+
+// Headway in minutes, from the frequency table at the bottom of the timetable
+function hw(t, day, loop, line) {
+  if (line === 'pp') {
+    // Purple Line: 6 min in weekday peaks (06:30–08:30, 17:00–19:30), otherwise 9:33
+    if (day === 'wd' && ((t >= 390 && t < 510) || (t >= 1020 && t < 1170))) return 6;
+    return 9 + 33 / 60;
+  }
+  if (day === 'wd') {
+    if (t < 420) return 5;
+    if (t < 540) return loop ? 6 + 58 / 60 : 3 + 29 / 60;
+    if (t < 990) return 6 + 40 / 60;
+    if (t < 1020) return 5;
+    if (t < 1200) return 3 + 50 / 60;
+    if (t < 1260) return 5 + 20 / 60;
+    return 7.25;
+  }
+  if (day === 'sat') { if (t < 660) return 7.25; if (t < 960) return 6.5; if (t < 1260) return 5.5; return 7.25; }
+  if (t < 1020) return 7.25; if (t < 1260) return 6.5; return 7.25;
+}
+
+// Count forward from the first train until 21:00, then backward from the last train
+function buildTimes(f, l, day, loop, line) {
+  if (f == null || l == null) return [];
+  // Late evening runs at one steady headway, so count that part back from the last train
+  const cut = line === 'pp' ? 1170 : 1260, tail = line === 'pp' ? 9 + 33 / 60 : 7.25;
+  const fwd = []; let t = f;
+  while (t < l && t < cut) { fwd.push(t); t += hw(t, day, loop, line); }
+  const back = []; t = l;
+  while (t >= cut && t > f) { back.push(t); t -= tail; }
+  back.reverse();
+  if (!back.length) { fwd.push(l); return fwd; }
+  while (fwd.length && back[0] - fwd[fwd.length - 1] < 2.5) fwd.pop();
+  return fwd.concat(back);
+}
+
+function realNow() {
+  const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', weekday: 'short', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+  const g = k => parts.find(p => p.type === k).value;
+  let wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(g('weekday'));
+  const h = +g('hour'), m = +g('minute'), s = +g('second');
+  let sm = h * 60 + m + s / 60;
+  if (h < 3) { sm += 1440; wd = (wd + 6) % 7; }
+  return { sm, wd, h, m, s };
+}
+
+// Simulated clock: starts at a chosen time and keeps running at the chosen speed
+let sim = null; // { base: service minutes, start: ms timestamp, speed }
+function simMinutes() {
+  let v = sim.base + (Date.now() - sim.start) / 60000 * sim.speed;
+  while (v >= 1620) v -= 1440;
+  return v;
+}
+function bkkNow() {
+  const real = realNow();
+  if (!sim) return real;
+  const sm = simMinutes(), tot = Math.floor(sm * 60) % 86400;
+  return { sm, wd: real.wd, h: Math.floor(tot / 3600), m: Math.floor(tot / 60) % 60, s: tot % 60, simulated: true };
+}
+
+const hhmm = t => { const r = Math.round(t) % 1440; return String(Math.floor(r / 60)).padStart(2, '0') + ':' + String(r % 60).padStart(2, '0'); };
+const TH_DAYS = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
+
+// BTS Skytrain, from the official route-map service behind bts.co.th (fetched 5 Nov 2026)
+// code | th | en | first towards end | first towards start | last towards end | last towards start
+const BTS_ROWS = {
+ "sk": "N24|คูคต|Khu Khot|05:15|-|23:15|-\nN23|แยก คปอ.|Yaek Kor Por Aor|05:17|05:38|23:17|00:44\nN22|พิพิธภัณฑ์กองทัพอากาศ|Royal Thai Air Force Museum|05:19|05:37|23:19|00:43\nN21|โรงพยาบาลภูมิพลอดุลยเดช|Bhumibol Adulyadej Hospital|05:21|05:35|23:21|00:41\nN20|สะพานใหม่|Saphan Mai|05:23|05:33|23:23|00:38\nN19|สายหยุด|Sai Yud|05:25|05:31|23:25|00:37\nN18|พหลโยธิน 59|Phahon Yothin 59|05:26|05:30|23:26|00:35\nN17|วัดพระศรีมหาธาตุ|Wat Phra Sri Mahathat|05:28|05:28|23:28|00:33\nN16|กรมทหารราบที่ 11|11th Infantry Regiment|05:30|05:26|23:30|00:31\nN15|บางบัว|Bang Bua|05:32|05:24|23:32|00:29\nN14|กรมป่าไม้|Royal Forest Department|05:33|05:23|23:34|00:28\nN13|มหาวิทยาลัยเกษตรศาสตร์|Kasetsart University|05:35|05:21|23:36|00:26\nN12|เสนานิคม|Sena Nikhom|05:36|05:19|23:37|00:24\nN11|รัชโยธิน|Ratchayothin|05:38|05:18|23:39|00:23\nN10|พหลโยธิน 24|Phahon Yothin 24|05:39|05:16|23:40|00:21\nN9|ห้าแยกลาดพร้าว|Ha Yaek Lat Phrao|05:41|05:15|23:42|00:19\nN8|หมอชิต|Mo Chit|05:15|05:57|23:46|00:16\nN7|สะพานควาย|Saphan Khwai|05:16|05:55|23:47|00:14\nN5|อารีย์|Ari|05:19|05:53|23:50|00:11\nN4|สนามเป้า|Sanam Pao|05:20|05:51|23:51|00:10\nN3|อนุสาวรีย์ชัยสมรภูมิ|Victory Monument|05:23|05:49|23:54|00:07\nN2|พญาไท|Phaya Thai|05:25|05:47|23:56|00:05\nN1|ราชเทวี|Ratchathewi|05:27|05:46|23:58|00:04\nCEN|สยาม|Siam|05:29|05:43|00:02|00:02\nE1|ชิดลม|Chit Lom|05:31|05:41|00:03|23:58\nE2|เพลินจิต|Phloen Chit|05:33|05:39|00:05|23:56\nE3|นานา|Nana|05:35|05:38|00:07|23:55\nE4|อโศก|Asok|05:36|05:36|00:09|23:53\nE5|พร้อมพงษ์|Phrom Phong|05:38|05:34|00:11|23:51\nE6|ทองหล่อ|Thong Lo|05:40|05:32|00:13|23:49\nE7|เอกมัย|Ekkamai|05:42|05:30|00:14|23:48\nE8|พระโขนง|Phra Khanong|05:44|05:28|00:16|23:46\nE9|อ่อนนุช|On Nut|05:46|05:26|00:18|23:44\nE10|บางจาก|Bang Chak|05:48|05:24|00:20|23:42\nE11|ปุณณวิถี|Punnawithi|05:49|05:23|00:22|23:40\nE12|อุดมสุข|Udom Suk|05:51|05:21|00:24|23:39\nE13|บางนา|Bang Na|05:53|05:19|00:26|23:36\nE14|แบริ่ง|Bearing|05:55|05:17|00:27|23:35\nE15|สำโรง|Samrong|05:15|05:15|00:30|23:32\nE16|ปู่เจ้า|Pu Chao|05:16|05:30|00:32|23:30\nE17|ช้างเอราวัณ|Chang Erawan|05:19|05:27|00:35|23:27\nE18|โรงเรียนนายเรือ|Royal Thai Naval Academy|05:22|05:24|00:37|23:25\nE19|ปากน้ำ|Pak Nam|05:23|05:23|00:39|23:23\nE20|ศรีนครินทร์|Srinagarindra|05:26|05:20|00:42|23:20\nE21|แพรกษา|Phraek Sa|05:28|05:18|00:44|23:18\nE22|สายลวด|Sai Luat|05:29|05:17|00:46|23:17\nE23|เคหะฯ|Kheha|-|05:15|-|23:15",
+ "sl": "W1|สนามกีฬาแห่งชาติ|National Stadium|05:30|-|00:00|-\nCEN|สยาม|Siam|05:31|05:54|00:02|00:02\nS1|ราชดำริ|Ratchadamri|05:34|05:51|00:04|23:56\nS2|ศาลาแดง|Sala Daeng|05:37|05:49|00:07|23:54\nS3|ช่องนนทรี|Chong Nonsi|05:39|05:47|00:09|23:52\nS4|เซนต์หลุยส์|Saint Louis|05:41|05:45|00:11|23:50\nS5|สุรศักดิ์|Surasak|05:42|05:43|00:12|23:48\nS6|สะพานตากสิน|Saphan Taksin|05:44|05:41|00:14|23:46\nS7|กรุงธนบุรี|Krung Thon Buri|05:47|05:39|00:17|23:44\nS8|วงเวียนใหญ่|Wongwian Yai|05:48|05:38|00:18|23:43\nS9|โพธิ์นิมิตร|Pho Nimit|05:50|05:36|00:20|23:41\nS10|ตลาดพลู|Talat Phlu|05:52|05:34|00:22|23:39\nS11|วุฒากาศ|Wutthakat|05:54|05:32|00:24|23:37\nS12|บางหว้า|Bang Wa|-|05:30|-|23:35",
+ "gd": "G1|กรุงธนบุรี (Gold Line)|Krung Thon Buri|06:00|-|00:08|-\nG2|เจริญนคร|Charoen Nakhon|06:04|06:08|00:12|00:17\nG3|คลองสาน|Khlong San|-|06:06|-|00:14"
+};
+// headway by period start (minutes after midnight) → "min.sec" values; two values = core section / outer sections
+const BTS_FREQ = {"sk": {"Day": [[360, ["5.00"]], [420, ["2.30", "5.00"]], [540, ["5.00"]], [570, ["6.30"]], [960, ["5.00"]], [1020, ["2.30", "5.00"]], [1200, ["5.00"]], [1260, ["6.00"]], [1320, ["8.00"]]], "Holiday": [[360, ["7.00"]], [480, ["5.55"]], [540, ["5.55"]], [660, ["4.30", "6.00"]], [1260, ["7.00"]], [1320, ["8.00"]]]}, "sl": {"Day": [[360, ["6.00"]], [420, ["3.45"]], [540, ["6.00"]], [570, ["6.00"]], [960, ["6.00"]], [1020, ["3.45"]], [1200, ["6.00"]], [1260, ["6.00"]], [1320, ["8.00"]]], "Holiday": [[360, ["7.00"]], [480, ["7.00"]], [540, ["6.00"]], [660, ["6.00"]], [1260, ["7.00"]], [1320, ["8.00"]]]}, "gd": {"Day": [[360, ["15.00"]], [420, ["10.00"]], [960, ["8.00"]], [1260, ["10.00"]], [1320, ["15.00"]]], "Holiday": [[360, ["15.00"]], [600, ["10.00"]], [900, ["8.00"]], [1320, ["10.00"]], [1380, ["15.00"]]]}};
+// SRT Red Line, every departure per station and direction, from srtet.co.th (weekday timetable, 5 Nov 2026)
+// t = minutes to the end of the line, m = departure times in minutes after midnight (after-midnight runs past 1440)
+const RED_T = {"rd":{"R01":{"F":{"t":23,"m":[300,315,330,345,360,375,390,400,410,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1000,1010,1020,1030,1040,1050,1060,1070,1080,1090,1100,1110,1120,1130,1140,1150,1160,1170,1185,1200,1215,1230,1245,1260,1275,1290,1305,1320,1335,1350,1365,1380,1395,1410,1425,1440]}},"R02":{"F":{"t":20,"m":[303,318,333,348,363,378,393,403,413,423,433,443,453,463,473,483,493,503,513,523,533,543,553,563,573,588,603,618,633,648,663,678,693,708,723,738,753,768,783,798,813,828,843,858,873,888,903,918,933,948,963,978,993,1003,1013,1023,1033,1043,1053,1063,1073,1083,1093,1103,1113,1123,1133,1143,1153,1163,1173,1188,1203,1218,1233,1248,1263,1278,1293,1308,1323,1338,1353,1368,1383,1398,1413,1428,1443]},"R":{"t":4,"m":[320,335,350,365,380,395,410,425,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,600,610,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935,950,965,980,995,1010,1025,1040,1050,1060,1070,1080,1090,1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,1200,1210,1220,1235,1250,1265,1280,1295,1310,1325,1340,1355,1370,1385,1400,1415,1430,1445,1460]}},"R03":{"F":{"t":18,"m":[305,320,335,350,365,380,395,405,415,425,435,445,455,465,475,485,495,505,515,525,535,545,555,565,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935,950,965,980,995,1005,1015,1025,1035,1045,1055,1065,1075,1085,1095,1105,1115,1125,1135,1145,1155,1165,1175,1190,1205,1220,1235,1250,1265,1280,1295,1310,1325,1340,1355,1370,1385,1400,1415,1430,1445]},"R":{"t":7,"m":[317,332,347,362,377,392,407,422,437,447,457,467,477,487,497,507,517,527,537,547,557,567,577,587,597,607,617,632,647,662,677,692,707,722,737,752,767,782,797,812,827,842,857,872,887,902,917,932,947,962,977,992,1007,1022,1037,1047,1057,1067,1077,1087,1097,1107,1117,1127,1137,1147,1157,1167,1177,1187,1197,1207,1217,1232,1247,1262,1277,1292,1307,1322,1337,1352,1367,1382,1397,1412,1427,1442,1457]}},"R04":{"F":{"t":16,"m":[307,322,337,352,367,382,397,407,417,427,437,447,457,467,477,487,497,507,517,527,537,547,557,567,577,592,607,622,637,652,667,682,697,712,727,742,757,772,787,802,817,832,847,862,877,892,907,922,937,952,967,982,997,1007,1017,1027,1037,1047,1057,1067,1077,1087,1097,1107,1117,1127,1137,1147,1157,1167,1177,1192,1207,1222,1237,1252,1267,1282,1297,1312,1327,1342,1357,1372,1387,1402,1417,1432,1447]},"R":{"t":8,"m":[316,331,346,361,376,391,406,421,436,446,456,466,476,486,496,506,516,526,536,546,556,566,576,586,596,606,616,631,646,661,676,691,706,721,736,751,766,781,796,811,826,841,856,871,886,901,916,931,946,961,976,991,1006,1021,1036,1046,1056,1066,1076,1086,1096,1106,1116,1126,1136,1146,1156,1166,1176,1186,1196,1206,1216,1231,1246,1261,1276,1291,1306,1321,1336,1351,1366,1381,1396,1411,1426,1441,1456]}},"R05":{"F":{"t":14,"m":[309,324,339,354,369,384,399,409,419,429,439,449,459,469,479,489,499,509,519,529,539,549,559,569,579,594,609,624,639,654,669,684,699,714,729,744,759,774,789,804,819,834,849,864,879,894,909,924,939,954,969,984,999,1009,1019,1029,1039,1049,1059,1069,1079,1089,1099,1109,1119,1129,1139,1149,1159,1169,1179,1194,1209,1224,1239,1254,1269,1284,1299,1314,1329,1344,1359,1374,1389,1404,1419,1434,1449]},"R":{"t":10,"m":[314,329,344,359,374,389,404,419,434,444,454,464,474,484,494,504,514,524,534,544,554,564,574,584,594,604,614,629,644,659,674,689,704,719,734,749,764,779,794,809,824,839,854,869,884,899,914,929,944,959,974,989,1004,1019,1034,1044,1054,1064,1074,1084,1094,1104,1114,1124,1134,1144,1154,1164,1174,1184,1194,1204,1214,1229,1244,1259,1274,1289,1304,1319,1334,1349,1364,1379,1394,1409,1424,1439,1454]}},"R06":{"F":{"t":11,"m":[312,327,342,357,372,387,402,412,422,432,442,452,462,472,482,492,502,512,522,532,542,552,562,572,582,597,612,627,642,657,672,687,702,717,732,747,762,777,792,807,822,837,852,867,882,897,912,927,942,957,972,987,1002,1012,1022,1032,1042,1052,1062,1072,1082,1092,1102,1112,1122,1132,1142,1152,1162,1172,1182,1197,1212,1227,1242,1257,1272,1287,1302,1317,1332,1347,1362,1377,1392,1407,1422,1437,1452]},"R":{"t":13,"m":[311,326,341,356,371,386,401,416,431,441,451,461,471,481,491,501,511,521,531,541,551,561,571,581,591,601,611,626,641,656,671,686,701,716,731,746,761,776,791,806,821,836,851,866,881,896,911,926,941,956,971,986,1001,1016,1031,1041,1051,1061,1071,1081,1091,1101,1111,1121,1131,1141,1151,1161,1171,1181,1191,1201,1211,1226,1241,1256,1271,1286,1301,1316,1331,1346,1361,1376,1391,1406,1421,1436,1451]}},"R07":{"F":{"t":9,"m":[314,329,344,359,374,389,404,414,424,434,444,454,464,474,484,494,504,514,524,534,544,554,564,574,584,599,614,629,644,659,674,689,704,719,734,749,764,779,794,809,824,839,854,869,884,899,914,929,944,959,974,989,1004,1014,1024,1034,1044,1054,1064,1074,1084,1094,1104,1114,1124,1134,1144,1154,1164,1174,1184,1199,1214,1229,1244,1259,1274,1289,1304,1319,1334,1349,1364,1379,1394,1409,1424,1439,1454]},"R":{"t":15,"m":[309,324,339,354,369,384,399,414,429,439,449,459,469,479,489,499,509,519,529,539,549,559,569,579,589,599,609,624,639,654,669,684,699,714,729,744,759,774,789,804,819,834,849,864,879,894,909,924,939,954,969,984,999,1014,1029,1039,1049,1059,1069,1079,1089,1099,1109,1119,1129,1139,1149,1159,1169,1179,1189,1199,1209,1224,1239,1254,1269,1284,1299,1314,1329,1344,1359,1374,1389,1404,1419,1434,1449]}},"R08":{"F":{"t":7,"m":[316,331,346,361,376,391,406,416,426,436,446,456,466,476,486,496,506,516,526,536,546,556,566,576,586,601,616,631,646,661,676,691,706,721,736,751,766,781,796,811,826,841,856,871,886,901,916,931,946,961,976,991,1006,1016,1026,1036,1046,1056,1066,1076,1086,1096,1106,1116,1126,1136,1146,1156,1166,1176,1186,1201,1216,1231,1246,1261,1276,1291,1306,1321,1336,1351,1366,1381,1396,1411,1426,1441,1456]},"R":{"t":17,"m":[307,322,337,352,367,382,397,412,427,437,447,457,467,477,487,497,507,517,527,537,547,557,567,577,587,597,607,622,637,652,667,682,697,712,727,742,757,772,787,802,817,832,847,862,877,892,907,922,937,952,967,982,997,1012,1027,1037,1047,1057,1067,1077,1087,1097,1107,1117,1127,1137,1147,1157,1167,1177,1187,1197,1207,1222,1237,1252,1267,1282,1297,1312,1327,1342,1357,1372,1387,1402,1417,1432,1447]}},"R09":{"F":{"t":3,"m":[320,335,350,365,380,395,410,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935,950,965,980,995,1010,1020,1030,1040,1050,1060,1070,1080,1090,1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,1205,1220,1235,1250,1265,1280,1295,1310,1325,1340,1355,1370,1385,1400,1415,1430,1445,1460]},"R":{"t":22,"m":[302,317,332,347,362,377,392,407,422,432,442,452,462,472,482,492,502,512,522,532,542,552,562,572,582,592,602,617,632,647,662,677,692,707,722,737,752,767,782,797,812,827,842,857,872,887,902,917,932,947,962,977,992,1007,1022,1032,1042,1052,1062,1072,1082,1092,1102,1112,1122,1132,1142,1152,1162,1172,1182,1192,1202,1217,1232,1247,1262,1277,1292,1307,1322,1337,1352,1367,1382,1397,1412,1427,1442]}},"R10":{"R":{"t":24,"m":[300,315,330,345,360,375,390,405,420,430,440,450,460,470,480,490,500,510,520,530,540,550,560,570,580,590,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1030,1040,1050,1060,1070,1080,1090,1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,1200,1215,1230,1245,1260,1275,1290,1305,1320,1335,1350,1365,1380,1395,1410,1425,1440]}}},"rl":{"RK":{"F":{"t":16,"m":[300,320,340,360,380,400,420,440,460,480,500,520,540,560,580,600,620,640,660,680,700,720,740,760,780,800,820,840,860,880,900,920,940,960,980,1000,1020,1040,1060,1080,1100,1120,1140,1160,1180,1200,1220,1240,1260,1280,1300,1320,1340,1360,1380,1400,1420,1440]}},"R11":{"F":{"t":13,"m":[303,323,343,363,383,403,423,443,463,483,503,523,543,563,583,603,623,643,663,683,703,723,743,763,783,803,823,843,863,883,903,923,943,963,983,1003,1023,1043,1063,1083,1103,1123,1143,1163,1183,1203,1223,1243,1263,1283,1303,1323,1343,1363,1383,1403,1423,1443]},"R":{"t":5,"m":[311,331,351,371,391,411,431,451,471,491,511,531,551,571,591,611,631,651,671,691,711,731,751,771,791,811,831,851,871,891,911,931,951,971,991,1011,1031,1051,1071,1091,1111,1131,1151,1171,1191,1211,1231,1251,1271,1291,1311,1331,1351,1371,1391,1411,1431,1451]}},"R12":{"F":{"t":6,"m":[310,330,350,370,390,410,430,450,470,490,510,530,550,570,590,610,630,650,670,690,710,730,750,770,790,810,830,850,870,890,910,930,950,970,990,1010,1030,1050,1070,1090,1110,1130,1150,1170,1190,1210,1230,1250,1270,1290,1310,1330,1350,1370,1390,1410,1430,1450]},"R":{"t":12,"m":[304,324,344,364,384,404,424,444,464,484,504,524,544,564,584,604,624,644,664,684,704,724,744,764,784,804,824,844,864,884,904,924,944,964,984,1004,1024,1044,1064,1084,1104,1124,1144,1164,1184,1204,1224,1244,1264,1284,1304,1324,1344,1364,1384,1404,1424,1444]}},"R13":{"R":{"t":16,"m":[300,320,340,360,380,400,420,440,460,480,500,520,540,560,580,600,620,640,660,680,700,720,740,760,780,800,820,840,860,880,900,920,940,960,980,1000,1020,1040,1060,1080,1100,1120,1140,1160,1180,1200,1220,1240,1260,1280,1300,1320,1340,1360,1380,1400,1420,1440]}}}};
+
+// ---------- other lines: BTS, SRT Red Line, Airport Rail Link ----------
+// Each line lists its stops in the "F" direction (towards its south/east/far end); "R" is the way back.
+const toMin = s => { if (!s || s[0] === '-') return null; const [h, m] = s.split(':').map(Number); let v = h * 60 + m; if (v < 180) v += 1440; return v; };
+const mss = s => { const [m, ss = '0'] = String(s).split('.'); return +m + (+ss.padEnd(2, '0')) / 60; };
+
+// Count forward from the first train with the period headway, and back from the last train in the late evening
+function buildGeneric(f, l, hwAt, cut, tail) {
+  if (f == null || l == null) return [];
+  const fwd = []; let t = f;
+  while (t < l && t < cut) { fwd.push(t); t += hwAt(t); }
+  const back = []; t = l;
+  while (t >= cut && t > f) { back.push(t); t -= tail; }
+  back.reverse();
+  if (!back.length) { fwd.push(l); return fwd; }
+  while (fwd.length && back[0] - fwd[fwd.length - 1] < tail * 0.4) fwd.pop();
+  return fwd.concat(back);
+}
+
+const XL = {
+  sk: { th: 'BTS สายสุขุมวิท', color: '--sk', F: 'ไปเคหะฯ', R: 'ไปคูคต', src: 'bts' },
+  sl: { th: 'BTS สายสีลม', color: '--sl', F: 'ไปบางหว้า', R: 'ไปสนามกีฬาแห่งชาติ', src: 'bts' },
+  gd: { th: 'BTS สายสีทอง', color: '--gd', F: 'ไปคลองสาน', R: 'ไปกรุงธนบุรี', src: 'bts' },
+  rd: { th: 'สายสีแดงเข้ม', color: '--rd', F: 'ไปรังสิต', R: 'ไปกรุงเทพอภิวัฒน์', src: 'red' },
+  rl: { th: 'สายสีแดงอ่อน', color: '--rl', F: 'ไปตลิ่งชัน', R: 'ไปกรุงเทพอภิวัฒน์', src: 'red' },
+  ar: { th: 'Airport Rail Link', color: '--ar', F: 'ไปพญาไท', R: 'ไปสุวรรณภูมิ', src: 'arl' },
+};
+const XS = {};   // station code -> { th, en, label, line, xy, lab, hidden }
+const XPHYS = { RK: 'R01', G1: 'S7' };  // same station on two lines
+// Pairs of nearby stations you walk between, with walking minutes (an estimate, not from a timetable)
+const XFER = [['13', 'N8', 5], ['14', 'N9', 5], ['11', 'R01', 6], ['P15', 'R11', 4], ['22', 'E4', 4], ['26', 'S2', 4],
+  ['34', 'S12', 4], ['21', 'A6', 6], ['N2', 'A8', 5]];
+const WALK = { '10': 4, '01': 2, R01: 3, CEN: 2, S7: 3 };
+
+// Map positions (same canvas as the Blue and Purple lines) and label placement
+const XYX = {
+  // Sukhumvit: north arm up the right of the Red Line, then down through the loop to Siam and east to Kheha
+  N24: [1135, -246], N23: [1085, -246], N22: [1035, -246], N21: [985, -246], N20: [935, -246], N19: [885, -246], N18: [835, -246],
+  N17: [785, -246], N16: [785, -214], N15: [785, -182], N14: [785, -150], N13: [785, -118], N12: [785, -86], N11: [785, -54], N10: [785, -22],
+  N9: [785, 10], N8: [690, 78], N7: [690, 190], N5: [690, 225], N4: [690, 260], N3: [690, 295], N2: [690, 330], N1: [690, 365],
+  CEN: [690, 405], E1: [740, 405], E2: [790, 405], E3: [840, 405], E4: [885, 405], E5: [985, 405], E6: [1045, 405], E7: [1105, 405],
+  E8: [1165, 405], E9: [1225, 405], E10: [1290, 445], E11: [1290, 475], E12: [1290, 505], E13: [1290, 535], E14: [1290, 565], E15: [1290, 595],
+  E16: [1290, 625], E17: [1290, 655], E18: [1290, 685], E19: [1290, 715], E20: [1290, 745], E21: [1290, 775], E22: [1290, 805], E23: [1290, 835],
+  // Silom: National Stadium – Siam – south across the Blue Line at Sala Daeng, west over the river to Bang Wa
+  W1: [640, 405], S1: [690, 440], S2: [740, 455], S3: [740, 545], S4: [740, 590], S5: [660, 640], S6: [575, 640], S7: [465, 640],
+  S8: [410, 640], S9: [360, 640], S10: [310, 640], S11: [262, 607], S12: [262, 575],
+  // Gold: from Krung Thon Buri up the west bank
+  G1: [465, 640], G2: [437, 612], G3: [409, 584],
+  // Dark Red: north from Krung Thep Aphiwat (Bang Sue); Light Red: west to Taling Chan
+  R01: [630, 95], R02: [630, 58], R03: [630, 20], R04: [630, -18], R05: [630, -56], R06: [630, -94], R07: [630, -132], R08: [630, -170],
+  R09: [630, -208], R10: [630, -246], RK: [630, 95], R11: [575, 40], R12: [330, 40], R13: [250, 40],
+  // Airport Rail Link: Phaya Thai east past Makkasan to Suvarnabhumi
+  A8: [725, 350], A7: [830, 350], A6: [1000, 350], A5: [1050, 350], A4: [1100, 350], A3: [1150, 350], A2: [1200, 350], A1: [1250, 350],
+};
+const XLAB = {
+  r: ['N16', 'N15', 'N14', 'N13', 'N12', 'N11', 'N10', 'N9', 'N7', 'N5', 'N4', 'N3', 'N2', 'N1', 'S2', 'S3', 'S4', 'S11', 'S12',
+    'E10', 'E11', 'E12', 'E13', 'E14', 'E15', 'E16', 'E17', 'E18', 'E19', 'E20', 'E21', 'E22', 'E23',
+    'R02', 'R03', 'R04', 'R05', 'R06', 'R07', 'R08', 'R09', 'R10', 'N8'],
+  l: ['CEN', 'W1', 'S1', 'G2', 'G3', 'R01'],
+  u: ['R11', 'R12', 'R13'],
+  d: ['E4'],
+  dr: ['S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'E5', 'E6', 'E7', 'E8', 'E9'],
+  ur: ['N24', 'N23', 'N22', 'N21', 'N20', 'N19', 'N18', 'N17', 'E1', 'E2', 'E3', 'A7', 'A6', 'A5', 'A4', 'A3', 'A2', 'A1'],
+};
+const XLABOF = {}; Object.entries(XLAB).forEach(([k, cs]) => cs.forEach(c => { XLABOF[c] = k; }));
+
+// --- BTS
+const SK_CORE = new Set(['N9', 'N8', 'N7', 'N5', 'N4', 'N3', 'N2', 'N1', 'CEN', ...Array.from({ length: 15 }, (_, i) => 'E' + (i + 1))]);
+const BTS = {};
+for (const [lid, txt] of Object.entries(BTS_ROWS)) {
+  BTS[lid] = {};
+  XL[lid].nodes = [];
+  txt.split('\n').forEach(r => {
+    const [code, th, en, fF, fR, lF, lR] = r.split('|');
+    BTS[lid][code] = { F: [toMin(fF), toMin(lF)], R: [toMin(fR), toMin(lR)] };
+    XL[lid].nodes.push(code);
+    XS[code] = XS[code] || { th, en, label: code, line: lid };
+  });
+}
+function btsHw(lid, t, day, code) {
+  const tab = BTS_FREQ[lid][day === 'wd' ? 'Day' : 'Holiday'];
+  let row = tab[0];
+  for (const r of tab) if (t >= r[0]) row = r;
+  const v = row[1], core = lid !== 'sk' || SK_CORE.has(code);
+  return mss(v.length > 1 && !core ? v[1] : v[0]);
+}
+
+// --- SRT Red Line
+const RED_NAMES = {
+  R01: ['กรุงเทพอภิวัฒน์', 'Krung Thep Aphiwat'], R02: ['จตุจักร', 'Chatuchak'], R03: ['วัดเสมียนนารี', 'Wat Samian Nari'], R04: ['บางเขน', 'Bang Khen'],
+  R05: ['ทุ่งสองห้อง', 'Thung Song Hong'], R06: ['หลักสี่', 'Lak Si'], R07: ['การเคหะ', 'Kan Kheha'], R08: ['ดอนเมือง', 'Don Mueang'],
+  R09: ['หลักหก', 'Lak Hok'], R10: ['รังสิต', 'Rangsit'], RK: ['กรุงเทพอภิวัฒน์', 'Krung Thep Aphiwat'], R11: ['บางซ่อน', 'Bang Son'],
+  R12: ['บางบำหรุ', 'Bang Bamru'], R13: ['ตลิ่งชัน', 'Taling Chan'],
+};
+XL.rd.nodes = ['R01', 'R02', 'R03', 'R04', 'R05', 'R06', 'R07', 'R08', 'R09', 'R10'];
+XL.rl.nodes = ['RK', 'R11', 'R12', 'R13'];
+for (const c of [...XL.rd.nodes, ...XL.rl.nodes]) XS[c] = { th: RED_NAMES[c][0], en: RED_NAMES[c][1], label: 'SRT', line: XL.rd.nodes.includes(c) ? 'rd' : 'rl' };
+
+// --- Airport Rail Link: no published per-station timetable, so times are estimated
+// (first trains 05:30 from both ends, last at midnight, about 27 minutes end to end)
+const ARL_ST = [['A1', 'สุวรรณภูมิ', 'Suvarnabhumi'], ['A2', 'ลาดกระบัง', 'Lat Krabang'], ['A3', 'บ้านทับช้าง', 'Ban Thap Chang'], ['A4', 'หัวหมาก', 'Hua Mak'],
+  ['A5', 'รามคำแหง', 'Ramkhamhaeng'], ['A6', 'มักกะสัน', 'Makkasan'], ['A7', 'ราชปรารภ', 'Ratchaprarop'], ['A8', 'พญาไท', 'Phaya Thai']];
+const ARL_OFF = [0, 5, 9, 13, 16, 20, 23, 27];
+XL.ar.nodes = ARL_ST.map(e => e[0]);
+ARL_ST.forEach(([c, th, en]) => { XS[c] = { th, en, label: c, line: 'ar' }; });
+function arlHw(t, day) {
+  if (day === 'wd' && ((t >= 360 && t < 540) || (t >= 960 && t < 1200))) return 10;
+  return 12;
+}
+
+// Paths on the map, in the F direction; arrays are corner points
+XL.sk.path = [...XL.sk.nodes.slice(0, 33), [1290, 405], ...XL.sk.nodes.slice(33)]; // turns south after On Nut
+XL.sl.path = ['W1', 'CEN', 'S1', [705, 455], 'S2', 'S3', 'S4', [740, 640], 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', [262, 640], 'S11', 'S12'];
+XL.gd.path = ['G1', 'G2', 'G3'];
+XL.rd.path = [...XL.rd.nodes];
+XL.rl.path = ['RK', 'R11', 'R12', 'R13'];
+XL.ar.path = [...XL.ar.nodes];
+
+for (const c of Object.keys(XS)) { XS[c].xy = XYX[c]; XS[c].lab = XLABOF[c] || 'none'; }
+XS.RK.hidden = XS.G1.hidden = true;   // drawn as the same dot as Krung Thep Aphiwat / Krung Thon Buri
+XS.A8.lab = 'none';                   // shares its name with BTS Phaya Thai right next to it
+XS.CEN.th = 'สยาม';
+
+// Departure times per stop and direction
+const XCACHE = {};
+function xlSched(lid, code, dir, day) {
+  const key = lid + code + dir + day; if (XCACHE[key]) return XCACHE[key];
+  const L = XL[lid]; let ts = [];
+  if (L.src === 'bts') {
+    const [f, l] = BTS[lid][code][dir];
+    const tail = btsHw(lid, 1380, day, code);
+    ts = buildGeneric(f, l, t => btsHw(lid, t, day, code), 1320, tail);
+  } else if (L.src === 'red') {
+    const e = RED_T[lid][code] && RED_T[lid][code][dir];
+    ts = e ? e.m.slice() : [];
+  } else {
+    const i = L.nodes.indexOf(code), off = dir === 'F' ? ARL_OFF[i] : 27 - ARL_OFF[i];
+    const end = dir === 'F' ? i === L.nodes.length - 1 : i === 0;
+    ts = end ? [] : buildGeneric(330 + off, 1440 + off, t => arlHw(t, day), 1260, 12);
+  }
+  return XCACHE[key] = ts;
+}
+function xlHw(lid, t, day, code) {
+  const L = XL[lid];
+  if (L.src === 'bts') return btsHw(lid, t, day, code);
+  if (L.src === 'arl') return arlHw(t, day);
+  return lid === 'rl' ? 20 : ((t >= 420 && t < 570) || (t >= 1020 && t < 1170)) ? 10 : 15;
+}
+// Running minutes from the first stop, per direction (from the last-train column, which follows one train)
+for (const [lid, L] of Object.entries(XL)) {
+  const prof = dir => {
+    const nodes = dir === 'F' ? L.nodes : [...L.nodes].reverse();
+    let raw;
+    if (L.src === 'bts') raw = nodes.map(c => BTS[lid][c][dir][1]);
+    else if (L.src === 'red') {
+      const first = RED_T[lid][nodes[0]][dir].t;
+      raw = nodes.map(c => (RED_T[lid][c] && RED_T[lid][c][dir] && RED_T[lid][c][dir].t != null) ? first - RED_T[lid][c][dir].t : null);
+    } else raw = nodes.map(c => { const i = L.nodes.indexOf(c); return dir === 'F' ? ARL_OFF[i] : 27 - ARL_OFF[i]; });
+    return raw.map((v, i) => v ?? (i ? raw[i - 1] + 2 : 0));
+  };
+  L.prof = { F: prof('F'), R: prof('R') };
+  L.note = L.src === 'bts' ? 'เวลาเที่ยวแรก/สุดท้ายและความถี่จาก BTS เวลาระหว่างนั้นเป็นการประมาณ'
+    : L.src === 'red' ? 'ตารางเวลาออกรถจริงจาก รฟฟท. (ฉบับวันธรรมดา)'
+    : 'ยังไม่มีตารางทางการ เวลาทั้งหมดเป็นการประมาณ';
+}
+
+// Boards for a station on these lines
+function xlRoutes(code) {
+  const out = [];
+  for (const [lid, L] of Object.entries(XL)) {
+    const n = L.nodes.find(c => (XPHYS[c] || c) === code); if (!n) continue;
+    const i = L.nodes.indexOf(n);
+    for (const dir of ['F', 'R']) {
+      if (!xlSched(lid, n, dir, 'wd').length && !xlSched(lid, n, dir, 'sat').length) continue;
+      const nx = L.nodes[dir === 'F' ? i + 1 : i - 1];
+      out.push({ key: lid + dir, line: lid, xl: true, track: lid, mdir: dir === 'F' ? 'T' : 'L', node: n, to: `${L.th} ${L[dir]}`, dirTo: L[dir],
+        via: nx ? 'สถานีถัดไป: ' + XS[XPHYS[nx] || nx].th : '', sched: day => xlSched(lid, n, dir, day), hwAt: (t, day) => xlHw(lid, t, day, n) });
+    }
+  }
+  return out;
+}
+
+// ---------- state ----------
+const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+let station = store.get('bl-station') || '22';
+let dayMode = store.get('bl-day') || 'auto';
+if (station !== '01' && !ST[station] && !PPS[station] && !(XS[station] && !XS[station].hidden)) station = '22';
+
+const sel = document.getElementById('station');
+const codes = ['01', ...Object.keys(ST)].sort((a, b) => +a - +b);
+sel.innerHTML = `<optgroup label="สายสีน้ำเงิน">${codes.map(c => `<option value="${c}">BL${c} · ${name(c)}${c === '01' ? ' · Tha Phra' : ' · ' + ST[c].en}${c === '10' ? ' (เปลี่ยนสายสีม่วง)' : ''}</option>`).join('')}</optgroup>
+  <optgroup label="สายสีม่วง">${PP.map(([c, th, en]) => `<option value="${c}">${codeLabel(c)} · ${th} · ${en}</option>`).join('')}</optgroup>` +
+  Object.entries(XL).map(([lid, L]) => `<optgroup label="${L.th}">${L.nodes.filter(c => !XS[c].hidden && XS[c].line === lid).map(c =>
+    `<option value="${c}">${XS[c].label === 'SRT' ? '' : XS[c].label + ' · '}${XS[c].th} · ${XS[c].en}</option>`).join('')}</optgroup>`).join('');
+sel.value = station;
+sel.addEventListener('change', () => { station = sel.value; store.set('bl-station', station); rebuild(); });
+
+document.querySelectorAll('.days button').forEach(b => b.addEventListener('click', () => {
+  dayMode = b.dataset.day; store.set('bl-day', dayMode); rebuild();
+}));
+
+let cache = [];
+function currentDay() {
+  if (dayMode !== 'auto') return dayMode;
+  const { wd } = bkkNow(); return wd === 6 ? 'sat' : wd === 0 ? 'sun' : 'wd';
+}
+
+function rebuild() {
+  const rd = document.getElementById('roundel');
+  rd.textContent = codeLabel(station); rd.classList.toggle('pp', isPP(station));
+  rd.style.cssText = XS[station] ? `border-color:var(${XL[XS[station].line].color});color:var(${XL[XS[station].line].color})` : '';
+  document.querySelectorAll('.days button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.day === dayMode)));
+  document.querySelectorAll('.m-stn').forEach(g => g.classList.toggle('sel', g.dataset.code === station));
+  const day = currentDay(), set = day === 'wd' ? 'wd' : 'we';
+  const routes = XS[station] ? xlRoutes(station) : isPP(station) ? ppRoutes(station) : station === '10' ? [...routesFor('10'), ...ppRoutes('10')] : routesFor(station);
+  cache = routes.map(r => {
+    const times = r.sched ? r.sched(day) : buildTimes(r[set][0], r[set][1], day, r.loop, r.line);
+    return { ...r, day, times, first: r.sched ? times[0] : r[set][0], last: r.sched ? times[times.length - 1] : r[set][1], pTime: r.purple ? r.purple[set] : null };
+  });
+  document.getElementById('boards').innerHTML = cache.map((r, i) => `
+    <article class="board${r.line === 'pp' ? ' pp' : ''}${r.xl ? ' xl' : ''}" id="b${i}"${r.xl ? ` style="--lc:var(${XL[r.line].color})"` : ''}>
+      <div class="dir"><div class="to">${r.to}</div><div class="via">${r.via}</div></div>
+      <div class="status"><span class="pill" data-f="pill"></span><span class="pill lastb" data-f="lastb" hidden>ขบวนสุดท้าย</span></div>
+      <div class="count"><span class="big" data-f="big"></span><span class="unit" data-f="unit"></span></div>
+      <div>
+        <div class="track" data-f="track"><div class="rail"></div><div class="done" data-f="done"></div><div class="train" data-f="train"></div><div class="stn"></div></div>
+        <div class="track-cap"><span data-f="prev"></span><span>${codeLabel(station)} ${name(station)}</span></div>
+      </div>
+      <div class="warn" data-f="warn" hidden></div>
+      <div class="next"><h3>ขบวนถัดไปโดยประมาณ</h3><div class="chips" data-f="chips"></div></div>
+      <div class="facts">
+        ${r.xl ? `<div class="fact" style="grid-column:1/-1"><div class="k">${XL[r.line].note}</div></div>` : ''}
+        ${r.line === 'pp' ? `<div class="fact" style="grid-column:1/-1"><div class="k">ตารางสายสีม่วงฉบับ 11 ส.ค. 2560 เวลาจริงอาจเปลี่ยนไปแล้ว</div></div>` : ''}
+        <div class="fact"><div class="k">เที่ยวแรก</div><div class="v">${hhmm(r.first)}</div></div>
+        <div class="fact"><div class="k">เที่ยวสุดท้าย</div><div class="v">${hhmm(r.last)}</div></div>
+        ${r.pTime != null ? `<div class="purple" data-f="purple"></div>` : ''}
+      </div>
+    </article>`).join('');
+  const short = s => s.replace(/ \(.*\)$/, '').replace('สายสีม่วง ', '');
+  document.getElementById('mk-layer').innerHTML = cache.map((r, i) => `
+    <g class="m-train" id="mk${i}" visibility="hidden">
+      <g class="bub">
+        <line class="lead" x1="0" y1="0" x2="0" y2="0"></line>
+        <rect class="bubr" x="-40" y="-11" width="80" height="22" rx="11"></rect>
+        <text x="0" y="4.5" text-anchor="middle"><tspan class="d">${r.dirTo || short(r.to)}</tspan><tspan class="t" dx="5"></tspan></text>
+      </g>
+      <g class="body">
+        <rect class="car" x="-18" y="-4" width="36" height="8" rx="3"></rect>
+        <line class="gap" x1="-6" y1="-4" x2="-6" y2="4"></line>
+        <line class="gap" x1="6" y1="-4" x2="6" y2="4"></line>
+        <rect class="win" x="-15.5" y="-1.1" width="27" height="2.2" rx="1.1"></rect>
+        <circle class="lamp" cx="15.2" cy="0" r="1.6"></circle>
+      </g>
+    </g>`).join('');
+  tick();
+}
+
+// ---------- map ----------
+const XY = { '38': [40, 540], '37': [95, 540], '36': [150, 540], '35': [205, 540], '34': [260, 540], '33': [315, 540], '01': [380, 540],
+  '32': [440, 540], '31': [500, 510], '30': [545, 480], '29': [600, 480], '28': [655, 480], '27': [710, 480], '26': [765, 480], '25': [820, 480], '24': [875, 480],
+  '23': [930, 430], '22': [930, 380], '21': [930, 330], '20': [930, 280], '19': [930, 230], '18': [930, 180], '17': [890, 140], '16': [850, 100], '15': [810, 60],
+  '14': [750, 60], '13': [710, 100], '12': [670, 140], '11': [600, 140], '10': [530, 140], '09': [460, 160], '08': [420, 200],
+  '07': [380, 240], '06': [380, 290], '05': [380, 340], '04': [380, 390], '03': [380, 440], '02': [380, 490] };
+// Line drawn in the "to Tha Phra" direction of travel; arrays are corner points
+const PATH = ['38', '37', '36', '35', '34', '33', '01', '32', [470, 540], '31', [530, 480], '30', '29', '28', '27', '26', '25', '24', [930, 480],
+  '23', '22', '21', '20', '19', '18', '17', '16', '15', '14', '13', '12', '11', '10', [480, 140], '09', '08', '07', '06', '05', '04', '03', '02', '01'];
+// Purple Line drawn in the "to Tao Poon" direction of travel
+const PPATH = ['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P07', 'P08', 'P09', 'P10', 'P11', [395, -40], 'P12', 'P13', 'P14', 'P15', '10'];
+function makeTrack(path, xy) {
+  const pts = path.map(e => typeof e === 'string' ? xy(e) : e), len = [0];
+  for (let i = 1; i < pts.length; i++) len.push(len[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  return { path, pts, len, ents: path.map((e, i) => typeof e === 'string' ? i : -1).filter(i => i >= 0) };
+}
+const TRACK = {
+  bl: makeTrack(PATH, c => XY[c]),
+  pp: makeTrack(PPATH, c => c === '10' ? XY['10'] : PPS[c].xy),
+};
+for (const [lid, L] of Object.entries(XL)) TRACK[lid] = makeTrack(L.path, c => XS[c].xy);
+const PTS = TRACK.bl.pts;
+
+function pointAt(len, tr) {
+  const { pts, len: L } = tr;
+  for (let i = 1; i < pts.length; i++) {
+    if (len <= L[i]) { const k = (len - L[i - 1]) / (L[i] - L[i - 1] || 1); return [pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * k, pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * k]; }
+  }
+  return pts[pts.length - 1];
+}
+// Stretch of track between the previous station and this one, for a train heading in `dir`
+function approach(code, dir, tr) {
+  if (!dir) return null;
+  const i = tr.path.indexOf(code), k = tr.ents.indexOf(i), pk = dir === 'T' ? k - 1 : k + 1;
+  if (i < 0 || pk < 0 || pk >= tr.ents.length) return null;
+  return [tr.len[tr.ents[pk]], tr.len[i]];
+}
+
+function labelFor(code) {
+  const n = +code, [x, y] = XY[code];
+  const nm = code === '23' ? 'ศูนย์ประชุมฯ' : name(code);
+  let a = 'start', lx = x, ly = y, rot = '';
+  if (n === 1) { a = 'middle'; ly = y + 28; }
+  else if (n >= 33) { lx = x + 4; ly = y - 16; rot = ` transform="rotate(-38 ${lx} ${ly})"`; }
+  else if (n === 32) { lx = x + 4; ly = y + 18; rot = ` transform="rotate(38 ${lx} ${ly})"`; }
+  else if (n === 31) { a = 'end'; lx = x - 12; ly = y - 6; }
+  else if (n === 13) { lx = x + 14; ly = y + 4.5; }
+  else if (n === 12) { a = 'end'; lx = x - 12; ly = y + 22; }
+  else if (n === 11) { a = 'end'; lx = x - 14; ly = y - 12; }
+  else if (n === 10) { a = 'middle'; ly = y + 26; }
+  else if (n >= 24) { a = 'middle'; ly = y + 26; }
+  else if (n >= 18) { lx = x + 16; ly = y + 4.5; }
+  else if (n >= 15) { lx = x + 10; ly = y - 13; }
+  else if (n === 14 || (n >= 10 && n <= 12)) { a = 'middle'; ly = y - 16; }
+  else { a = 'end'; lx = x - 15; ly = y + 4.5; }
+  return `<text x="${lx}" y="${ly}" text-anchor="${a}"${rot}>${nm}</text>`;
+}
+
+function drawMap() {
+  const svg = document.getElementById('map');
+  const river = 'M 215 -340 C 222 -280, 228 -240, 230 -200 C 245 -130, 285 -80, 278 -30 C 274 10, 380 0, 420 40 C 460 80, 515 110, 505 165 C 495 250, 440 330, 450 420 C 456 480, 476 505, 472 545 C 469 580, 480 600, 500 625 C 520 650, 545 700, 520 870';
+  svg.innerHTML = `
+    <path class="m-river" d="${river}"></path>
+    <text class="m-river-t" x="0" y="0" transform="translate(462 300) rotate(-72)">แม่น้ำเจ้าพระยา</text>
+    <g id="route-layer"></g>
+    <path class="m-line" d="M ${PTS.map(p => p.join(' ')).join(' L ')}"></path>
+    <path class="m-div" d="M ${PTS.map(p => p.join(' ')).join(' L ')}"></path>
+    <path class="m-line pp" d="M ${TRACK.pp.pts.map(p => p.join(' ')).join(' L ')}"></path>
+    <path class="m-div" d="M ${TRACK.pp.pts.map(p => p.join(' ')).join(' L ')}"></path>
+    ${Object.entries(XL).map(([lid, L]) => {
+      const d = `M ${TRACK[lid].pts.map(p => p.join(' ')).join(' L ')}`;
+      return `<path class="m-line xl" style="--c:var(${L.color})" d="${d}"></path><path class="m-div" d="${d}"></path>`;
+    }).join('')}
+    ${XFER.map(([a, b]) => {
+      const pa = XY[a] || (PPS[a] && PPS[a].xy) || XS[a].xy, pb = XY[b] || (PPS[b] && PPS[b].xy) || XS[b].xy;
+      return `<line class="m-link" x1="${pa[0]}" y1="${pa[1]}" x2="${pb[0]}" y2="${pb[1]}"></line><line class="m-link-in" x1="${pa[0]}" y1="${pa[1]}" x2="${pb[0]}" y2="${pb[1]}"></line>`;
+    }).join('')}
+    <circle class="m-xfer" cx="${XY['10'][0]}" cy="${XY['10'][1]}" r="15"></circle>
+    ${PP.map(([c, th, en, [x, y]]) => {
+      const n = +c.slice(1);
+      let a = 'start', lx = x + 12, ly = y + 4.5, rot = '';
+      if (n <= 3) { a = 'end'; lx = x - 14; }
+      else if (n <= 11) { lx = x + 4; ly = y - 16; rot = ` transform="rotate(-38 ${lx} ${ly})"`; }
+      return `<g class="m-stn pp" data-code="${c}" tabindex="0" role="button" aria-label="เลือกสถานี ${codeLabel(c)} ${th}">
+        <circle class="hit" cx="${x}" cy="${y}" r="16"></circle>
+        <circle class="halo" cx="${x}" cy="${y}" r="19"></circle>
+        <circle class="dot" cx="${x}" cy="${y}" r="9"></circle>
+        ${n === 15 ? '' : `<text x="${lx}" y="${ly}" text-anchor="${a}"${rot}>${th}</text>`}
+      </g>`;
+    }).join('')}
+    ${Object.keys(XY).map(c => `
+      <g class="m-stn" data-code="${c}" tabindex="0" role="button" aria-label="เลือกสถานี BL${c} ${name(c)}${c === '10' ? ' / PP16' : ''}">
+        <circle class="hit" cx="${XY[c][0]}" cy="${XY[c][1]}" r="16"></circle>
+        <circle class="halo" cx="${XY[c][0]}" cy="${XY[c][1]}" r="19"></circle>
+        <circle class="dot" cx="${XY[c][0]}" cy="${XY[c][1]}" r="${c === '01' ? 11 : 9}"></circle>
+        ${labelFor(c)}
+      </g>`).join('')}
+    ${Object.entries(XS).filter(([, v]) => !v.hidden).map(([c, v]) => {
+      const [x, y] = v.xy, big = c === 'CEN' || c === 'R01' || c === 'S7';
+      let a = 'start', lx = x + 14, ly = y + 4.5, rot = '';
+      if (v.lab === 'l') { a = 'end'; lx = x - 14; }
+      else if (v.lab === 'u') { a = 'middle'; lx = x; ly = y - 16; }
+      else if (v.lab === 'd') { a = 'middle'; lx = x; ly = y + 26; }
+      else if (v.lab === 'ur') { lx = x + 4; ly = y - 16; rot = ` transform="rotate(-38 ${lx} ${ly})"`; }
+      else if (v.lab === 'dr') { lx = x + 4; ly = y + 18; rot = ` transform="rotate(38 ${lx} ${ly})"`; }
+      const nm = c === 'R01' ? 'กรุงเทพอภิวัฒน์' : v.th;
+      return `<g class="m-stn xl" style="--c:var(${XL[v.line].color})" data-code="${c}" tabindex="0" role="button" aria-label="เลือกสถานี ${nm} ${XL[v.line].th}">
+        <circle class="hit" cx="${x}" cy="${y}" r="16"></circle>
+        <circle class="halo" cx="${x}" cy="${y}" r="19"></circle>
+        <circle class="dot" cx="${x}" cy="${y}" r="${big ? 11 : 9}"></circle>
+        ${v.lab === 'none' ? '' : `<text x="${lx}" y="${ly}" text-anchor="${a}"${rot}>${nm}</text>`}
+      </g>`;
+    }).join('')}
+    <g id="mk-layer"></g>`;
+  svg.querySelectorAll('.m-stn').forEach(g => {
+    const pick = () => {
+      if (tapMode === 'to') { setDest(g.dataset.code); return; }
+      station = g.dataset.code; sel.value = station; store.set('bl-station', station); rebuild();
+    };
+    g.addEventListener('click', pick);
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+  });
+}
+
+function setMarker(i, r, state, p, diff) {
+  const mk = document.getElementById('mk' + i); if (!mk) return;
+  const tr = TRACK[r.track || (r.line === 'pp' ? 'pp' : 'bl')];
+  const seg = approach(r.node || station, r.mdir, tr);
+  if (!state || !seg) { mk.setAttribute('visibility', 'hidden'); return; }
+  // The train rides on the track and stops short of the station dot so it never hides it
+  const at = seg[0] + (seg[1] - seg[0]) * Math.min(p, 0.82);
+  const [x, y] = pointAt(at, tr);
+  // Heading comes from the track behind the train, so a station on a corner keeps the right side
+  const dirSign = seg[1] > seg[0] ? 1 : -1;
+  const [bx, by] = pointAt(at - dirSign * 3, tr);
+  let dx = x - bx, dy = y - by; const L = Math.hypot(dx, dy) || 1; dx /= L; dy /= L;
+  const ang = Math.atan2(dy, dx) * 180 / Math.PI;
+  // The countdown bubble sits inside the loop, away from station names, one lane per direction
+  let nx = -dy, ny = dx;
+  if (nx * (650 - x) + ny * (310 - y) < 0) { nx = -nx; ny = -ny; }
+  mk.setAttribute('visibility', 'visible');
+  mk.setAttribute('class', `m-train ${r.xl ? 'xl' : r.line === 'pp' ? 'pp' : 'bl'} ${state}`);
+  if (r.xl) mk.style.setProperty('--c', `var(${XL[r.line].color})`);
+  mk.querySelector('.t').textContent = fmtCount(Math.max(0, diff))[0];
+  const txt = mk.querySelector('.bub text');
+  let w = 80; try { w = txt.getComputedTextLength() || 80; } catch {}
+  const rc = mk.querySelector('.bubr'); rc.setAttribute('x', -w / 2 - 10); rc.setAttribute('width', w + 20);
+  // Push the bubble clear of the track by its own half-size, and set it a little behind the train.
+  // On horizontal track the two directions' bubbles would run into each other, so they take two lanes.
+  const half = Math.abs(nx) * (w / 2 + 10) + Math.abs(ny) * 11;
+  const off = 10 + half + (Math.abs(ny) > 0.5 && r.mdir === 'T' ? 28 : 0);
+  const ox = nx * off - dx * 14, oy = ny * off - dy * 14;
+  const body = mk.querySelector('.body'), bub = mk.querySelector('.bub');
+  // First placement jumps straight into position; later ticks glide
+  const first = !mk.dataset.placed;
+  if (first) { body.style.transition = bub.style.transition = 'none'; mk.dataset.placed = '1'; }
+  const tx = x + dy * 3.8, ty = y - dx * 3.8;
+  body.style.transform = `translate(${tx}px, ${ty}px) rotate(${ang}deg)`;
+  bub.style.transform = `translate(${tx + ox}px, ${ty + oy}px)`;
+  if (first) { mk.getBoundingClientRect(); requestAnimationFrame(() => { body.style.transition = bub.style.transition = ''; }); }
+  const ld = mk.querySelector('.lead');
+  ld.setAttribute('x2', -ox - nx * 8); ld.setAttribute('y2', -oy - ny * 8);
+}
+
+function fmtCount(min) {
+  if (min >= 60) { const h = Math.floor(min / 60), m = Math.round(min % 60); return [`${h}:${String(m).padStart(2, '0')}`, 'ชั่วโมง']; }
+  const s = Math.max(0, Math.round(min * 60));
+  return [`${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`, 'นาที'];
+}
+
+let lastAutoDay = null;
+function tick() {
+  const now = bkkNow();
+  const clk = document.getElementById('clock');
+  const hms = `${String(now.h).padStart(2, '0')}:${String(now.m).padStart(2, '0')}:${String(now.s).padStart(2, '0')}`;
+  clk.textContent = now.simulated ? `จำลอง ${hms}${sim.speed === 0 ? ' (หยุด)' : sim.speed > 1 ? ` (×${sim.speed})` : ''}` : `วัน${TH_DAYS[now.wd]} · ${hms}`;
+  clk.classList.toggle('simulated', !!now.simulated);
+  syncSimInputs(now);
+  renderTrip(now);
+  if (dayMode === 'auto') { const d = currentDay(); if (lastAutoDay && d !== lastAutoDay) { lastAutoDay = d; return rebuild(); } lastAutoDay = d; }
+  const t = now.sm;
+
+  cache.forEach((r, i) => {
+    const el = document.getElementById('b' + i); if (!el) return;
+    const q = f => el.querySelector(`[data-f="${f}"]`);
+    const pill = q('pill'), track = q('track');
+    const times = r.times;
+    let idx = times.findIndex(x => x >= t - 0.25);
+    const lastb = q('lastb'), warn = q('warn');
+    lastb.hidden = true; warn.hidden = true;
+
+    if (r.pTime != null) {
+      const pe = q('purple');
+      if (t <= r.pTime) { pe.classList.remove('gone'); pe.textContent = `จะต่อสายสีม่วงที่เตาปูน ต้องขึ้นขบวนไม่เกิน ${hhmm(r.pTime)}`; }
+      else { pe.classList.add('gone'); pe.textContent = `ขบวนที่ต่อสายสีม่วงได้หมดแล้ว (ขบวนสุดท้าย ${hhmm(r.pTime)})`; }
+    }
+
+    if (!times.length || idx === -1) {
+      pill.className = 'pill off'; pill.textContent = 'หมดขบวนแล้ววันนี้';
+      q('big').textContent = '—'; q('unit').textContent = '';
+      track.classList.add('off'); q('done').style.width = '0';
+      q('prev').textContent = `ขบวนสุดท้ายออกไปแล้ว ${hhmm(r.last)}`;
+      q('chips').innerHTML = `<span class="chip">เปิดอีกครั้งพรุ่งนี้เช้า</span>`;
+      setMarker(i, r, null);
+      return;
+    }
+
+    const next = times[idx];
+    const before = idx === 0 && t < next - 0.25 && t < r.first;
+    const diff = next - t;
+    const prev = idx > 0 ? times[idx - 1] : next - (r.hwAt ? r.hwAt(next, r.day) : hw(next, r.day, r.loop, r.line));
+    let p = Math.min(1, Math.max(0, (t - prev) / (next - prev)));
+
+    if (before) {
+      pill.className = 'pill off'; pill.textContent = 'ยังไม่เปิดให้บริการ';
+      track.classList.add('off'); p = 0;
+      q('prev').textContent = `เที่ยวแรก ${hhmm(next)}`;
+    } else {
+      track.classList.remove('off');
+      if (diff <= 0.75) { pill.className = 'pill now'; pill.textContent = 'รถกำลังเข้าสถานี'; }
+      else if (diff <= 3) { pill.className = 'pill soon'; pill.textContent = 'ใกล้มาแล้ว เตรียมตัว'; }
+      else { pill.className = 'pill'; pill.textContent = 'ยังไม่มา รอได้'; }
+      q('prev').textContent = idx > 0 ? `ขบวนก่อนหน้า ≈ ${hhmm(prev)}` : 'ขบวนแรกของวัน';
+    }
+
+    const [big, unit] = fmtCount(diff);
+    q('big').textContent = (diff <= 0 ? '0:00' : big);
+    q('unit').textContent = before ? `${unit}ถึงเที่ยวแรก (≈ ${hhmm(next)})` : `${unit} · มาถึงราว ${hhmm(next)}`;
+    q('done').style.width = `calc((100% - 14px) * ${p})`;
+    q('train').style.left = `calc((100% - 40px) * ${p} + 20px)`;
+
+    const isLast = idx === times.length - 1;
+    if (isLast) lastb.hidden = false;
+    const left = times.length - idx;
+    if (isLast) { warn.hidden = false; warn.textContent = 'นี่คือขบวนสุดท้ายของทิศทางนี้ ถ้าพลาดจะไม่มีรถอีก'; }
+    else if (left <= 4 && !before) { warn.hidden = false; warn.textContent = `เหลืออีกประมาณ ${left} ขบวน ขบวนสุดท้าย ${hhmm(r.last)}`; }
+
+    setMarker(i, r, before ? null : diff <= 0.75 ? 'now' : diff <= 3 ? 'soon' : 'wait', p, diff);
+
+    q('chips').innerHTML = times.slice(idx, idx + 4).map((x, j) =>
+      `<span class="chip${idx + j === times.length - 1 ? ' last' : ''}">${hhmm(x)}${idx + j === times.length - 1 ? ' · สุดท้าย' : ''}</span>`).join('');
+  });
+}
+
+// ---------- trip planner ----------
+// Each direction of travel is a line of stops; Tha Phra appears per platform, Tao Poon is BL10 and PP16
+const BLOOP = Array.from({ length: 31 }, (_, i) => String(i + 2).padStart(2, '0'));
+const ORD = {
+  BT: { line: 'bl', to: 'ไปท่าพระ', nodes: ['38', '37', '36', '35', '34', '33', '01b', ...[...BLOOP].reverse(), '01c'] },
+  BL: { line: 'bl', to: 'ไปหลักสอง', nodes: ['01c', ...BLOOP, '01a', '33', '34', '35', '36', '37', '38'] },
+  PT: { line: 'pp', to: 'ไปเตาปูน', nodes: [...PP.map(e => e[0]), 'P16'] },
+  PK: { line: 'pp', to: 'ไปคลองบางไผ่', nodes: ['P16', ...PP.map(e => e[0]).reverse()] },
+};
+const phys = n => XPHYS[n] || (n === 'P16' ? '10' : (n.length === 3 && n[0] === '0') ? '01' : n);
+const PLAT = { '01a': 'ชานชาลา 1', '01b': 'ชานชาลา 2', '01c': 'ชานชาลา 3–4' };
+const ppKey = n => n === 'P16' ? '16' : n.slice(1);
+// Running time between stops comes from the last-train column, which follows one train down the line
+function lastAt(o, n) {
+  if (o === 'BT') return n === '01b' ? P('23:19') : n === '01c' ? null : ST[n].wd.T[1];
+  if (o === 'BL') return n === '01c' ? P('23:14') : n === '01a' ? P('00:20') : n === '38' ? null : ST[n].wd.L[1];
+  if (o === 'PT') return n === 'P16' ? null : PT[ppKey(n)].T.wd[1];
+  return n === 'P01' ? null : PT[ppKey(n)].K.wd[1];
+}
+// BTS, Red Line and Airport Rail Link run on their own stop lists and timetables
+for (const [lid, L] of Object.entries(XL)) {
+  ORD[lid + 'F'] = { line: lid, to: L.F, nodes: L.nodes, prof: L.prof.F, dep: (n, day) => xlSched(lid, n, 'F', day) };
+  ORD[lid + 'R'] = { line: lid, to: L.R, nodes: [...L.nodes].reverse(), prof: L.prof.R, dep: (n, day) => xlSched(lid, n, 'R', day) };
+}
+for (const [o, d] of Object.entries(ORD)) {
+  if (d.dep) continue;
+  const raw = d.nodes.map(n => lastAt(o, n));
+  if (raw.some(v => v === undefined)) continue;
+  d.prof = raw.map((v, i) => v ?? raw[i - 1] + 2); // terminal stop: two minutes after the one before
+}
+
+const TT = {};
+function depTimes(o, n, day) {
+  const k = day + '|' + o + '|' + n; if (TT[k]) return TT[k];
+  const find = (rs, key) => rs.find(x => x.key === key);
+  let r = null;
+  if (o === 'BT') r = n === '01c' ? null : n === '01b' ? find(routesFor('01'), 'p2') : find(routesFor(n), 'T');
+  else if (o === 'BL') r = n === '38' ? null : n === '01c' ? find(routesFor('01'), 'p34') : n === '01a' ? find(routesFor('01'), 'p1') : find(routesFor(n), 'L');
+  else if (o === 'PT') r = n === 'P16' ? null : find(ppRoutes(n), 'pT');
+  else r = n === 'P01' ? null : find(ppRoutes(n === 'P16' ? '10' : n), 'pK');
+  const set = day === 'wd' ? 'wd' : 'we';
+  return TT[k] = r ? buildTimes(r[set][0], r[set][1], day, r.loop, r.line) : [];
+}
+function lowerBound(a, t) { let lo = 0, hi = a.length; while (lo < hi) { const m = (lo + hi) >> 1; if (a[m] < t) lo = m + 1; else hi = m; } return lo; }
+
+// Earliest-arrival search over the stops, waiting for the next estimated train at each boarding
+function plan(from, to, t0, day) {
+  const F = phys(from), D = phys(to), key = (o, i) => o + ':' + i;
+  const best = {}, prev = {}, done = new Set(), open = [];
+  for (const [o, d] of Object.entries(ORD)) d.nodes.forEach((n, i) => { if (phys(n) === F) { best[key(o, i)] = t0; prev[key(o, i)] = null; open.push([o, i]); } });
+  const relax = (o, i, t, info) => { const k = key(o, i); if (best[k] == null || t < best[k] - 1e-9) { best[k] = t; prev[k] = info; open.push([o, i]); } };
+  while (open.length) {
+    let bi = 0;
+    for (let j = 1; j < open.length; j++) if (best[key(...open[j])] < best[key(...open[bi])]) bi = j;
+    const [o, i] = open.splice(bi, 1)[0], k = key(o, i);
+    if (done.has(k)) continue; done.add(k);
+    const d = ORD[o], n = d.nodes[i], t = best[k];
+    if (phys(n) === D) return build(o, i);
+    const ts = d.dep ? d.dep(n, day) : depTimes(o, n, day), di = lowerBound(ts, t);
+    if (di < ts.length) {
+      const dep = ts[di];
+      for (let j = i + 1; j < d.nodes.length; j++) relax(o, j, dep + d.prof[j] - d.prof[i], { type: 'ride', o, i, dep, last: di === ts.length - 1 });
+    }
+    for (const [o2, d2] of Object.entries(ORD)) d2.nodes.forEach((n2, i2) => {
+      if ((o2 !== o || i2 !== i) && phys(n2) === phys(n)) { const w = WALK[phys(n)] || 3; relax(o2, i2, t + w, { type: 'walk', o, i, w }); }
+    });
+    // walking links to a nearby station of another line
+    for (const [a, b, w] of XFER) {
+      const other = phys(n) === a ? b : phys(n) === b ? a : null; if (!other) continue;
+      for (const [o2, d2] of Object.entries(ORD)) d2.nodes.forEach((n2, i2) => { if (phys(n2) === other) relax(o2, i2, t + w, { type: 'walk', o, i, w }); });
+    }
+  }
+  return null;
+
+  function build(o, i) {
+    const steps = []; let co = o, ci = i;
+    while (prev[key(co, ci)]) { const p = prev[key(co, ci)]; steps.unshift({ ...p, j: ci, to: co, arr: best[key(co, ci)] }); co = p.o; ci = p.i; }
+    const legs = [];
+    for (const s of steps) {
+      const last = legs[legs.length - 1];
+      if (s.type === 'ride' && last && last.type === 'ride' && last.o === s.o && last.j === s.i) { last.j = s.j; last.arr = s.arr; last.last = last.last || s.last; }
+      else if (s.type === 'ride') legs.push({ type: 'ride', o: s.o, i: s.i, j: s.j, dep: s.dep, arr: s.arr, last: s.last });
+      else legs.push({ type: 'walk', fromNode: ORD[s.o].nodes[s.i], toNode: ORD[s.to].nodes[s.j], toLine: ORD[s.to].line, fromLine: ORD[s.o].line, arr: s.arr, w: s.w });
+    }
+    while (legs.length && legs[0].type === 'walk') legs.shift();
+    return { legs, arr: legs.length ? legs[legs.length - 1].arr : t0 };
+  }
+}
+
+let dest = store.get('bl-dest') || '';
+if (dest && dest !== '01' && !ST[dest] && !PPS[dest] && !(XS[dest] && !XS[dest].hidden)) dest = '';
+let tapMode = 'from';
+const destSel = document.getElementById('dest');
+destSel.innerHTML = `<option value="">— เลือกสถานีปลายทาง —</option>` + sel.innerHTML;
+destSel.value = dest;
+function setDest(c) { dest = c; destSel.value = c; store.set('bl-dest', c); lastRouteSig = null; tick(); }
+destSel.addEventListener('change', () => setDest(destSel.value));
+document.getElementById('tripSwap').addEventListener('click', () => {
+  if (!dest) return;
+  const a = station; station = dest; sel.value = station; store.set('bl-station', station);
+  setDest(a); rebuild();
+});
+document.querySelectorAll('.tapmode button').forEach(b => b.addEventListener('click', () => {
+  tapMode = b.dataset.mode;
+  document.querySelectorAll('.tapmode button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+}));
+
+const lineName = l => XL[l] ? XL[l].th : l === 'pp' ? 'สายสีม่วง' : 'สายสีน้ำเงิน';
+const stopName = n => name(phys(n)) + (PLAT[n] ? ` (${PLAT[n]})` : '');
+const dur = m => { m = Math.max(0, Math.round(m)); return m >= 60 ? `${Math.floor(m / 60)} ชม. ${m % 60} นาที` : `${m} นาที`; };
+
+let lastRouteSig = null; // null forces the next draw, even when the new route is empty
+function nodeLen(n, tr, line) {
+  if (XL[line]) return tr.len[tr.path.indexOf(n)];
+  if (line === 'pp') return tr.len[tr.path.indexOf(n === 'P16' ? '10' : n)];
+  if (n === '01c') return tr.len[tr.path.lastIndexOf('01')];
+  if (n === '01a' || n === '01b') return tr.len[tr.path.indexOf('01')];
+  return tr.len[tr.path.indexOf(n)];
+}
+function drawRoute(res) {
+  const sig = res ? res.legs.filter(l => l.type === 'ride').map(l => l.o + l.i + '-' + l.j).join('|') : '';
+  document.querySelectorAll('.m-stn').forEach(g => g.classList.toggle('dest', !!dest && phys(g.dataset.code) === phys(dest) && phys(dest) !== phys(station)));
+  if (sig === lastRouteSig) return; lastRouteSig = sig;
+  const layer = document.getElementById('route-layer'); if (!layer) return;
+  layer.innerHTML = !res ? '' : res.legs.filter(l => l.type === 'ride').map(l => {
+    const d = ORD[l.o], tr = TRACK[d.line], a = nodeLen(d.nodes[l.i], tr, d.line), b = nodeLen(d.nodes[l.j], tr, d.line);
+    const lo = Math.min(a, b), hi = Math.max(a, b);
+    const pts = [pointAt(lo, tr), ...tr.pts.filter((_, k) => tr.len[k] > lo && tr.len[k] < hi), pointAt(hi, tr)];
+    return `<path class="m-route" d="M ${pts.map(p => p.map(v => v.toFixed(1)).join(' ')).join(' L ')}"></path>`;
+  }).join('');
+}
+
+function renderTrip(now) {
+  const out = document.getElementById('tripOut'); if (!out) return;
+  document.getElementById('tripFrom').textContent = `${codeLabel(station)} ${name(station)}`;
+  document.getElementById('tripSwap').disabled = !dest;
+  const hint = msg => { out.innerHTML = `<p class="trip-hint">${msg}</p>`; drawRoute(null); };
+  if (!dest) return hint('เลือกสถานีปลายทางจากรายการ หรือกด "ปลายทาง" ใต้แผนที่แล้วแตะสถานีที่จะไป');
+  if (phys(dest) === phys(station)) return hint('ต้นทางกับปลายทางเป็นสถานีเดียวกัน');
+  const res = plan(station, dest, now.sm, currentDay());
+  if (!res || !res.legs.length) return hint('ไม่มีรถไปถึงปลายทางแล้วสำหรับวันนี้ รถเปิดให้บริการอีกครั้งพรุ่งนี้เช้า');
+  const rides = res.legs.filter(l => l.type === 'ride');
+  const wait = rides[0].dep - now.sm, onboard = rides.reduce((a, l) => a + l.arr - l.dep, 0);
+  const xfers = res.legs.filter(l => l.type === 'walk').length;
+  const usesLast = rides.some(l => l.last);
+  let li = '';
+  res.legs.forEach((l, k) => {
+    if (l.type === 'ride') {
+      const d = ORD[l.o], cls = d.line === 'pp' ? 'pp' : 'bl', stops = l.j - l.i;
+      const rs = XL[d.line] ? ` style="--c:var(${XL[d.line].color})"` : '';
+      li += `<li class="lg-board lg-${cls}"><span class="tm">${hhmm(l.dep)}</span><span class="rail"${rs}></span><div class="what"><b>ขึ้นที่ ${stopName(d.nodes[l.i])}</b><div>${lineName(d.line)} ${d.to} · ${stops} สถานี · นั่งราว ${dur(l.arr - l.dep)}${l.last ? ' · ขบวนสุดท้าย' : ''}</div></div></li>`;
+      li += `<li class="lg-alight lg-${cls}${k === res.legs.length - 1 ? ' final' : ''}"><span class="tm">${hhmm(l.arr)}</span><span class="rail"${rs}></span><div class="what"><b>${k === res.legs.length - 1 ? 'ถึง' : 'ลงที่'} ${stopName(d.nodes[l.j])}</b></div></li>`;
+    } else {
+      const same = phys(l.fromNode) === phys(l.toNode);
+      const change = !same ? `เดินไป${lineName(l.toLine)} สถานี${name(phys(l.toNode))}`
+        : l.fromLine !== l.toLine ? `เปลี่ยนไป${lineName(l.toLine)}ที่${name(phys(l.toNode))}`
+        : `เปลี่ยนขบวนที่${name(phys(l.toNode))}${PLAT[l.toNode] ? ' ไป' + PLAT[l.toNode] : ''}`;
+      li += `<li class="lg-walk"><span class="tm"></span><span class="rail"></span><div class="what">${change} · เดินราว ${l.w || 3} นาที</div></li>`;
+    }
+  });
+  out.innerHTML = `
+    <div class="trip-sum">
+      <div class="big">${Math.round(res.arr - now.sm)}<span>นาที</span></div>
+      <div class="eta"><div>ถึง${name(phys(dest))}ราว <b>${hhmm(res.arr)}</b></div><span>รอรถ ${dur(wait)} · นั่งรถ ${dur(onboard)}${xfers ? ` · เปลี่ยน ${xfers} ครั้ง` : ' · ไม่ต้องเปลี่ยนขบวน'}</span></div>
+    </div>
+    ${usesLast ? `<div class="warn">เส้นทางนี้ต้องขึ้นขบวนสุดท้าย ถ้าพลาดจะไปไม่ถึงวันนี้</div>` : ''}
+    <ol class="legs">${li}</ol>`;
+  drawRoute(res);
+}
+
+// ---------- time simulation ----------
+const simH = document.getElementById('simH'), simM = document.getElementById('simM'), simRange = document.getElementById('simRange');
+const simSpeed = document.getElementById('simSpeed'), simReal = document.getElementById('simReal');
+let dragging = false;
+function startSim(base) {
+  sim = { base, start: Date.now(), speed: +simSpeed.value };
+  simReal.setAttribute('aria-pressed', 'false');
+  tick();
+}
+function syncSimInputs(now) {
+  if (document.activeElement !== simH && document.activeElement !== simM) { simH.value = String(now.h).padStart(2, '0'); simM.value = String(now.m).padStart(2, '0'); }
+  if (!dragging) simRange.value = Math.round(now.sm);
+}
+// Hours listed in service order (05 … 23, then 00–01 after midnight), minutes 00–59, all 24-hour
+const pad2 = n => String(n).padStart(2, '0');
+simH.innerHTML = [...Array.from({ length: 19 }, (_, i) => i + 5), 0, 1].map(h => `<option value="${pad2(h)}">${pad2(h)}</option>`).join('');
+simM.innerHTML = Array.from({ length: 60 }, (_, m) => `<option value="${pad2(m)}">${pad2(m)}</option>`).join('');
+function applySimTime() {
+  const h = +simH.value, m = +simM.value;
+  let v = h * 60 + m; if (v < 180) v += 1440;
+  startSim(v);
+}
+simH.addEventListener('change', applySimTime);
+simM.addEventListener('change', applySimTime);
+simRange.addEventListener('pointerdown', () => { dragging = true; });
+simRange.addEventListener('input', () => startSim(+simRange.value));
+simRange.addEventListener('change', () => { dragging = false; });
+simSpeed.addEventListener('change', () => {
+  if (sim) { sim = { base: simMinutes(), start: Date.now(), speed: +simSpeed.value }; tick(); }
+  else startSim(realNow().sm);
+});
+simReal.addEventListener('click', () => { sim = null; simSpeed.value = '1'; simReal.setAttribute('aria-pressed', 'true'); tick(); });
+
+drawMap();
+rebuild();
+setInterval(tick, 1000);
+</script>
