@@ -1,0 +1,6319 @@
+[
+ {
+  "LineId": 4,
+  "name": "Yellow Line",
+  "nameTH": "สายสีเหลือง",
+  "color": "#FAD53D",
+  "stations": [
+   {
+    "code": "YL01",
+    "id": 81,
+    "th": "ลาดพร้าว",
+    "en": "Lat Phrao",
+    "order": 1,
+    "lat": 13.807008,
+    "lng": 100.574913,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:30"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "--:--"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:00"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "--:--"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL02",
+    "id": 82,
+    "th": "ภาวนา",
+    "en": "Phawana",
+    "order": 2,
+    "lat": 13.800162,
+    "lng": 100.584199,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:32"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:59"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:02"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:44"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL03",
+    "id": 83,
+    "th": "โชคชัย 4",
+    "en": "Chok Chai 4",
+    "order": 3,
+    "lat": 13.794418,
+    "lng": 100.594455,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:34"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:57"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:04"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:42"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL04",
+    "id": 84,
+    "th": "ลาดพร้าว 71",
+    "en": "Lat Phrao 71",
+    "order": 4,
+    "lat": 13.787076,
+    "lng": 100.607604,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:36"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:55"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:06"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:40"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL05",
+    "id": 85,
+    "th": "ลาดพร้าว 83",
+    "en": "Lat Phrao 83",
+    "order": 5,
+    "lat": 13.783666,
+    "lng": 100.613733,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:38"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:53"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:08"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:38"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL06",
+    "id": 87,
+    "th": "มหาดไทย",
+    "en": "Mahat Thai",
+    "order": 6,
+    "lat": 13.778333,
+    "lng": 100.62325,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:40"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:51"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:10"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:36"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL07",
+    "id": 86,
+    "th": "ลาดพร้าว 101",
+    "en": "Lat Phrao 101",
+    "order": 7,
+    "lat": 13.774609,
+    "lng": 100.62993,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:41"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:50"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:11"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:35"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL08",
+    "id": 88,
+    "th": "บางกะปิ",
+    "en": "Bang Kapi",
+    "order": 8,
+    "lat": 13.769062,
+    "lng": 100.639788,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:43"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:48"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:13"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:33"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL09",
+    "id": 89,
+    "th": "แยกลำสาลี",
+    "en": "Yaek Lam Sali",
+    "order": 9,
+    "lat": 13.761734,
+    "lng": 100.645541,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:46"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:45"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:16"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:30"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL10",
+    "id": 90,
+    "th": "ศรีกรีฑา",
+    "en": "Si Kritha",
+    "order": 10,
+    "lat": 13.750371,
+    "lng": 100.644796,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:48"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:43"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:18"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:28"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL11",
+    "id": 91,
+    "th": "หัวหมาก",
+    "en": "Hua Mak",
+    "order": 11,
+    "lat": 13.736049,
+    "lng": 100.641124,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:51"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:41"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:21"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:26"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL12",
+    "id": 92,
+    "th": "กลันตัน",
+    "en": "Kalantan",
+    "order": 12,
+    "lat": 13.725307,
+    "lng": 100.641787,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:38"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:38"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:23"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:23"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL13",
+    "id": 93,
+    "th": "ศรีนุช",
+    "en": "Si Nut",
+    "order": 13,
+    "lat": 13.711009,
+    "lng": 100.644176,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:40"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:51"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:25"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:21"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL14",
+    "id": 94,
+    "th": "ศรีนครินทร์ 38",
+    "en": "Srinagarindra 38",
+    "order": 14,
+    "lat": 13.700996,
+    "lng": 100.646494,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:42"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:49"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:27"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:19"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL15",
+    "id": 95,
+    "th": "สวนหลวง ร.9",
+    "en": "Suan Luang Rama IX",
+    "order": 15,
+    "lat": 13.690733,
+    "lng": 100.647085,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:44"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:47"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:29"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:17"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL16",
+    "id": 96,
+    "th": "ศรีอุดม",
+    "en": "Si Udom",
+    "order": 16,
+    "lat": 13.676586,
+    "lng": 100.646205,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:46"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:44"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:31"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:15"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL17",
+    "id": 97,
+    "th": "ศรีเอี่ยม",
+    "en": "Si lam",
+    "order": 17,
+    "lat": 13.667692,
+    "lng": 100.645105,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:48"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:43"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:33"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:13"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL18",
+    "id": 98,
+    "th": "ศรีลาซาล",
+    "en": "Si La Salle",
+    "order": 18,
+    "lat": 13.655017,
+    "lng": 100.642146,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:50"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:41"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:35"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:11"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL19",
+    "id": 99,
+    "th": "ศรีแบริ่ง",
+    "en": "Si Bearing",
+    "order": 19,
+    "lat": 13.643457,
+    "lng": 100.636198,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:52"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:38"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:37"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:09"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL20",
+    "id": 100,
+    "th": "ศรีด่าน",
+    "en": "Si Dan",
+    "order": 20,
+    "lat": 13.633129,
+    "lng": 100.6301,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:54"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:36"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:39"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:07"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL21",
+    "id": 101,
+    "th": "ศรีเทพา",
+    "en": "Si Thepha",
+    "order": 21,
+    "lat": 13.629969,
+    "lng": 100.622654,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:57"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:34"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:42"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:04"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL22",
+    "id": 102,
+    "th": "ทิพวัล",
+    "en": "Thipphawan",
+    "order": 22,
+    "lat": 13.636789,
+    "lng": 100.609927,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "05:59"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:32"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "00:44"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:02"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   },
+   {
+    "code": "YL23",
+    "id": 103,
+    "th": "สำโรง",
+    "en": "Samrong",
+    "order": 23,
+    "lat": 13.645064,
+    "lng": 100.596564,
+    "first": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "--:--"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "05:30"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากลาดพร้าวไปสำโรง",
+      "fromstation_en": "Lat Phrao to Samrong",
+      "platform": 1,
+      "Time": "--:--"
+     },
+     {
+      "fromstation_th": "จากสำโรงไปลาดพร้าว",
+      "fromstation_en": "Samrong to Lat Phrao",
+      "platform": 2,
+      "Time": "00:00"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 4,
+      "LineNameTH": "สายสีเหลือง",
+      "LineNameEN": "Yellow Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 09:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "09:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 20:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 15:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "15:00 - 20:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "20:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [],
+      "Holiday_SPUR": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "LineId": 5,
+  "name": "Pink Line",
+  "nameTH": "สายสีชมพู",
+  "color": "#D76886",
+  "stations": [
+   {
+    "code": "PK01",
+    "id": 134,
+    "th": "ศูนย์ราชการนนทบุรี",
+    "en": "Nonthaburi Civic Center",
+    "order": 1,
+    "lat": 13.859672,
+    "lng": 100.518151,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:30"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "--:--"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:00"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "--:--"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK02",
+    "id": 135,
+    "th": "แคราย",
+    "en": "Khae Rai",
+    "order": 2,
+    "lat": 13.862709,
+    "lng": 100.520625,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:32"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:24"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:02"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:58"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK03",
+    "id": 136,
+    "th": "สนามบินน้ำ",
+    "en": "Sanambin Nam",
+    "order": 3,
+    "lat": 13.8742,
+    "lng": 100.516271,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:24"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:32"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:04"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:56"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK04",
+    "id": 137,
+    "th": "สามัคคี",
+    "en": "Samakkhi",
+    "order": 4,
+    "lat": 13.889349,
+    "lng": 100.510533,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:26"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:29"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:06"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:53"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK05",
+    "id": 138,
+    "th": "กรมชลประทาน",
+    "en": "Royal Irrigation Department",
+    "order": 5,
+    "lat": 13.898632,
+    "lng": 100.507045,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:28"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:28"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:08"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:52"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK06",
+    "id": 139,
+    "th": "แยกปากเกร็ด",
+    "en": "Yaek Pak Kret",
+    "order": 6,
+    "lat": 13.906297,
+    "lng": 100.505421,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:30"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:26"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:10"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:50"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK07",
+    "id": 140,
+    "th": "เลี่ยงเมืองปากเกร็ด",
+    "en": "Pak Kret Bypass",
+    "order": 7,
+    "lat": 13.906482,
+    "lng": 100.515574,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:32"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:24"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:12"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:48"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK08",
+    "id": 141,
+    "th": "แจ้งวัฒนะ-ปากเกร็ด 28",
+    "en": "Chaeng Watthana-Pak Kret 28",
+    "order": 8,
+    "lat": 13.904173,
+    "lng": 100.529178,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:24"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:31"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:14"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:45"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK09",
+    "id": 142,
+    "th": "ศรีรัช",
+    "en": "Si Rat",
+    "order": 9,
+    "lat": 13.900563,
+    "lng": 100.539956,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:26"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:29"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:16"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:43"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK10",
+    "id": 143,
+    "th": "เมืองทองธานี",
+    "en": "Muang Thong Thani",
+    "order": 10,
+    "lat": 13.897387,
+    "lng": 100.548386,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:29"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:27"
+     },
+     {
+      "fromstation_th": "เมืองทองธานี ไป ทะเลสาบเมืองทองธานี",
+      "fromstation_en": "Muang Thong Thani to Lake Muang Thong Thani",
+      "platform": 3,
+      "Time": "06:00"
+     },
+     {
+      "fromstation_th": "ทะเลสาบเมืองทองธานี ไป เมืองทองธานี\r\n",
+      "fromstation_en": "Lake Muang Thong Thani to Muang Thong Thani",
+      "platform": 4,
+      "Time": "--:--"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:19"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:40"
+     },
+     {
+      "fromstation_th": "เมืองทองธานี ไป ทะเลสาบเมืองทองธานี",
+      "fromstation_en": "Muang Thong Thani to Lake Muang Thong Thani",
+      "platform": 3,
+      "Time": "00:00"
+     },
+     {
+      "fromstation_th": "ทะเลสาบเมืองทองธานี ไป เมืองทองธานี\r\n",
+      "fromstation_en": "Lake Muang Thong Thani to Muang Thong Thani",
+      "platform": 4,
+      "Time": "--:--"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK11",
+    "id": 144,
+    "th": "แจ้งวัฒนะ 14",
+    "en": "Chaeng Watthana 14",
+    "order": 11,
+    "lat": 13.893277,
+    "lng": 100.560093,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:31"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:24"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:21"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:38"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK12",
+    "id": 145,
+    "th": "ศูนย์ราชการเฉลิมพระเกียรติ",
+    "en": "Government Complex",
+    "order": 12,
+    "lat": 13.890726,
+    "lng": 100.567286,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:24"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:33"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:23"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:37"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK13",
+    "id": 146,
+    "th": "โทรคมนาคมแห่งชาติ",
+    "en": "National Telecom",
+    "order": 13,
+    "lat": 13.887561,
+    "lng": 100.575671,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:26"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:31"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:25"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:35"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK14",
+    "id": 147,
+    "th": "หลักสี่",
+    "en": "Lak Si",
+    "order": 14,
+    "lat": 13.884108,
+    "lng": 100.582584,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:27"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:29"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:27"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:33"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK15",
+    "id": 148,
+    "th": "ราชภัฏพระนคร",
+    "en": "Rajabhat Phranakhon",
+    "order": 15,
+    "lat": 13.880023,
+    "lng": 100.589239,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:30"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:27"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:28"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:31"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK16",
+    "id": 149,
+    "th": "วัดพระศรีมหาธาตุ",
+    "en": "Wat Phra Sri Mahathat",
+    "order": 16,
+    "lat": 13.874415,
+    "lng": 100.596828,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:32"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:25"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:31"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:29"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK17",
+    "id": 150,
+    "th": "รามอินทรา 3",
+    "en": "Ram Inthra 3",
+    "order": 17,
+    "lat": 13.870944,
+    "lng": 100.60258,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:24"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:32"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:33"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:27"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK18",
+    "id": 151,
+    "th": "ลาดปลาเค้า",
+    "en": "Lat Pla Khao",
+    "order": 18,
+    "lat": 13.862783,
+    "lng": 100.617775,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:26"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:30"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:35"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:24"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK19",
+    "id": 152,
+    "th": "รามอินทรา กม.4",
+    "en": "Ram Inthra Kor Mor 4",
+    "order": 19,
+    "lat": 13.85829,
+    "lng": 100.626101,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:28"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:28"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:37"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:22"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK20",
+    "id": 153,
+    "th": "มัยลาภ",
+    "en": "Maiyalap",
+    "order": 20,
+    "lat": 13.855009,
+    "lng": 100.632198,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:30"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:26"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:39"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:21"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK21",
+    "id": 154,
+    "th": "วัชรพล",
+    "en": "Vacharaphol",
+    "order": 21,
+    "lat": 13.849216,
+    "lng": 100.642867,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:32"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:24"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:41"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:19"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK22",
+    "id": 155,
+    "th": "รามอินทรา กม.6",
+    "en": "Ram Inthra Kor Mor 6",
+    "order": 22,
+    "lat": 13.845233,
+    "lng": 100.650221,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:24"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:33"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:43"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:17"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK23",
+    "id": 156,
+    "th": "คู้บอน",
+    "en": "Khu Bon",
+    "order": 23,
+    "lat": 13.840588,
+    "lng": 100.658821,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:26"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:31"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:45"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:15"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK24",
+    "id": 157,
+    "th": "รามอินทรา กม.9",
+    "en": "Ram Inthra Kor Mor 9",
+    "order": 24,
+    "lat": 13.833832,
+    "lng": 100.667485,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:28"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:29"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:47"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:13"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK25",
+    "id": 158,
+    "th": "วงแหวนรามอินทรา",
+    "en": "Outer Ring Road-Ram Inthra",
+    "order": 25,
+    "lat": 13.824487,
+    "lng": 100.677096,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:30"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:26"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:49"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:11"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK26",
+    "id": 159,
+    "th": "นพรัตน์",
+    "en": "Nopparat",
+    "order": 26,
+    "lat": 13.816575,
+    "lng": 100.685552,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:32"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:24"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:51"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:08"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK27",
+    "id": 160,
+    "th": "บางชัน",
+    "en": "Bang Chan",
+    "order": 27,
+    "lat": 13.812716,
+    "lng": 100.702769,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:25"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:33"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:54"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:06"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK28",
+    "id": 161,
+    "th": "เศรษฐบุตรบำเพ็ญ",
+    "en": "Setthabutbamphen",
+    "order": 28,
+    "lat": 13.812724,
+    "lng": 100.712406,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:27"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:31"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:56"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:04"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK29",
+    "id": 162,
+    "th": "ตลาดมีนบุรี",
+    "en": "Min Buri Market",
+    "order": 29,
+    "lat": 13.812547,
+    "lng": 100.725654,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "05:29"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:29"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "00:58"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:02"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "PK30",
+    "id": 163,
+    "th": "มีนบุรี",
+    "en": "Min Buri",
+    "order": 30,
+    "lat": 13.808422,
+    "lng": 100.732589,
+    "first": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "--:--"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "05:27"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "จากศูนย์ราชการนนทบุรีไปมีนบุรี",
+      "fromstation_en": "Nonthaburi Civic Center to Min Buri",
+      "platform": 1,
+      "Time": "--:--"
+     },
+     {
+      "fromstation_th": "จากมีนบุรีไปศูนย์ราชการนนทบุรี",
+      "fromstation_en": "Min Buri to Nonthaburi Civic Center",
+      "platform": 2,
+      "Time": "00:00"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "MT01",
+    "id": 164,
+    "th": "อิมแพ็ค เมืองทองธานี",
+    "en": "Impact Muang Thong Thani",
+    "order": 31,
+    "lat": 13.91041,
+    "lng": 100.544265,
+    "first": [
+     {
+      "fromstation_th": "เมืองทองธานี ไป ทะเลสาบเมืองทองธานี",
+      "fromstation_en": "Muang Thong Thani to Lake Muang Thong Thani",
+      "platform": 3,
+      "Time": "06:04"
+     },
+     {
+      "fromstation_th": "ทะเลสาบเมืองทองธานี ไป เมืองทองธานี\r\n",
+      "fromstation_en": "Lake Muang Thong Thani to Muang Thong Thani",
+      "platform": 4,
+      "Time": "06:02"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "เมืองทองธานี ไป ทะเลสาบเมืองทองธานี",
+      "fromstation_en": "Muang Thong Thani to Lake Muang Thong Thani",
+      "platform": 3,
+      "Time": "00:04"
+     },
+     {
+      "fromstation_th": "ทะเลสาบเมืองทองธานี ไป เมืองทองธานี\r\n",
+      "fromstation_en": "Lake Muang Thong Thani to Muang Thong Thani",
+      "platform": 4,
+      "Time": "00:02"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "code": "MT02",
+    "id": 165,
+    "th": "ทะเลสาบเมืองทองธานี",
+    "en": "Lake Muang Thong Thani",
+    "order": 32,
+    "lat": 13.918364,
+    "lng": 100.54565,
+    "first": [
+     {
+      "fromstation_th": "เมืองทองธานี ไป ทะเลสาบเมืองทองธานี",
+      "fromstation_en": "Muang Thong Thani to Lake Muang Thong Thani",
+      "platform": 3,
+      "Time": "--:--"
+     },
+     {
+      "fromstation_th": "ทะเลสาบเมืองทองธานี ไป เมืองทองธานี\r\n",
+      "fromstation_en": "Lake Muang Thong Thani to Muang Thong Thani",
+      "platform": 4,
+      "Time": "06:00"
+     }
+    ],
+    "last": [
+     {
+      "fromstation_th": "เมืองทองธานี ไป ทะเลสาบเมืองทองธานี",
+      "fromstation_en": "Muang Thong Thani to Lake Muang Thong Thani",
+      "platform": 3,
+      "Time": "--:--"
+     },
+     {
+      "fromstation_th": "ทะเลสาบเมืองทองธานี ไป เมืองทองธานี\r\n",
+      "fromstation_en": "Lake Muang Thong Thani to Muang Thong Thani",
+      "platform": 4,
+      "Time": "00:00"
+     }
+    ],
+    "supply": [],
+    "freq": [
+     {
+      "LineId": 5,
+      "LineNameTH": "สายสีชมพู",
+      "LineNameEN": "Pink Line",
+      "Day": [
+       {
+        "ServiceHours": "06:00 - 06:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "06:30 - 08:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:30 - 16:30",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "16:30 - 19:30",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "19:30 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Day_SPUR": [
+       {
+        "ServiceHours": "06:00 - 07:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "07:00 - 08:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "08:00 - 17:00",
+        "Time": [
+         "10.00"
+        ]
+       },
+       {
+        "ServiceHours": "17:00 - 18:00",
+        "Time": [
+         "5.00"
+        ]
+       },
+       {
+        "ServiceHours": "18:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ],
+      "Holiday_SPUR": [
+       {
+        "ServiceHours": "06:00 - 24:00",
+        "Time": [
+         "10.00"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]
